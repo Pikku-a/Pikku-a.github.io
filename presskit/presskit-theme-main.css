@@ -1,0 +1,27 @@
+body {
+	text-align:center;
+	background-color:#004d3d;
+	color:white;
+	font-family:tahoma;
+	width:80%;
+	margin: 0 auto;
+}
+p {
+	line-height:1.8;
+}
+a {
+	color:white;
+}
+a:hover {
+	border-style:hidden hidden solid hidden;
+	border-color:yellow;
+}
+@media screen and (max-width: 600px) {
+	body {
+		width:95%;
+	}
+	img {
+		width:100%;
+		height:auto;
+	}
+}
