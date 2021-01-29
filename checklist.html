@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+	<head>
+		<title>Checklist</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		
+		<style>
+			p, button {
+				display: inline;
+				font-size: 20px;
+				font-family: open sans;
+			}
+			h1 {
+				font-family: open sans;
+			}
+			input {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color:#99cccc">
+		<h1 contenteditable="true">Checklist</h1>
+		<button type="button" onclick="newtask()">New task</button>
+		<button type="button" onclick="removetask()">Remove first task</button>
+		<button type="button" onclick="window.location.reload();">Start over</button>
+		<br><br>
+
+		<script>
+			function newtask() {
+			  var x = document.createElement("INPUT");		//INPUT
+			  var y = document.createElement("p");			//P
+			  var b = document.createElement("br");			//BR
+			  var txt = document.createTextNode("Task");	//THE TEXT
+			  var element = document.getElementById("task");//GET THE ELEMENT
+			  
+			  x.setAttribute("type", "checkbox");			//SET ATTRIBUTE TO INPUT
+			  x.setAttribute("id","itask");					//SET ID TO INPUT
+			  b.setAttribute("id","btask");					//SET ID TO BR
+			  y.setAttribute("id","task");					//SET ID TO P
+			  y.setAttribute("contenteditable","true");		//MAKE P EDITABLE
+			  
+			  document.body.appendChild(x);					//CREATE INPUT
+			  document.body.appendChild(y);					//CREATE P
+			  document.body.appendChild(b);					//CREATE BR
+			  y.appendChild(txt);							//?
+			  element.insertBefore(element,list.childNodes[0]);	//?
+			}
+			
+			function removetask() {
+				//REMOVE P
+				var pa = document.getElementById("task");
+				pa.remove();
+				//REMOVE INPUT
+				var inpu = document.getElementById("itask");
+				inpu.remove();
+				//REMOVE BR
+				var brr = document.getElementById("btask");
+				brr.remove();
+			}
+		</script>
+	</body>
+</html>
