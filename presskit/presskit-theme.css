@@ -1,0 +1,29 @@
+body {
+	background-color:#004d3d;
+	color:white;
+	font-family:tahoma;
+	width:80%;
+	margin: 0 auto;
+	margin-left:100px;
+	text-align:justify;
+}
+p {
+	line-height:1.8;
+}
+a {
+	color:white;
+}
+img {
+	width:30%;
+	height:auto;
+}
+@media screen and (max-width: 600px) {
+	body {
+		width:95%;
+		margin-left:10px;
+	}
+	img {
+		width:100%;
+		height:auto;
+	}
+}
