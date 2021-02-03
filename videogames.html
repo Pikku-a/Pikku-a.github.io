@@ -9,65 +9,19 @@
     <meta name="description" content="Videogames by Pikku-a">
     <meta name="keywords" content="pikku-a, pikku a, pikku-a games, flyinglegends_studio, flyinglegends studio, unknown castle, dr atominus,dr. atominus,atominus,supper banana, cubic getaway, videogames, games, adventure, pixelart">
     <link rel="stylesheet" type="text/css" href="pikku-a-theme.css">
-    <style>
 
-    a {
-      color: white;
-    }
-	p, footer {
-		font-size: 20px;
-	}
-
-    /*Side by side images*/
-    * {
-      box-sizing: border-box;
-    }
-
-    .column {
-      display: inline-block;
-      width: 33.33%;
-      margin: 5px;
-      width:190px;
-    }
-
-    /* Clearfix (clear floats) */
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-      /* CONTENTS */
-      .contents {
-        color: #d5d9e0;
-        text-align: center;
-        width: 60%;
-        margin: 0 auto;
-        font-family: courier new;
-      }
-      /* RESPONSIVE */
-      @media screen and (max-width: 700px) {
-        .contents {
-          width: 80%;
-        }
-      }
-      @media screen and (max-width: 500px) {
-        .contents {
-          width: 100%;
-        }
-        .column {
-          width: 100%;
-        }
-      }
-    </style>
   </head>
 
   <body bgcolor="#030303">
     <div class="contents">
-      <!--<img style="width:100%" src="fls.png" alt="Flyinglegends_Studio logo">-->
-      <br><br><br>
+
+	  <img class="slideshow" src="images/pikku-a games.png">
+	  <a href="https://pikku-a.com/dr-atominus"><img class="slideshow" src="images/dr atominus valokeilakuva nettisivulle.png"></a>
+	  <a href="https://pikku-a.com/unknown-castle"><img class="slideshow" src="images/unknown castle valokeilakuva nettisivulle.png"></a>
+
+	  <br>
       <h1>Pikku-a Games</h1>
-	  <h3>Videogames by Pikku-a (previously Flyinglegends_Studio)</h3><br><br>
+	  <h3>Videogames by Pikku-a</h3><br><br>
 		
       <div class="row">
 	  
@@ -102,19 +56,38 @@
 
       </div>
 		
-<br><br><br><br><br><p>To get updated about my upcoming games, follow me on these places:</p>
+<br><br><br><div style="background-image: url('images/sarjistausta.jpg');"><br><br><p>Follow me to know when new games come:</p>
         <a href="https://store.steampowered.com/developer/pikku-a">Steam</a> | 
         <a href="https://pikku-a.itch.io/">Itch.io</a> | 
         <a href="https://gamejolt.com/@flyinglegends_studio">GameJolt</a> | 
         <a href="https://www.youtube.com/channel/UCzKIFNtRA1A2r3cJB8alHYw">Youtube</a> | 
         <a href="https://www.indiedb.com/company/pikkua">IndieDB</a><br><br><br><br><br><br>
-
+		</div><br><br>
+		
       <footer>
 	  <a href="index.html">Back to the planet</a>
       | © Pikku-a 2020
       </footer>
         <br><br>
     </div>
+	
+	<script>
+	//Slideshow (automatic)
+	var currentSlide = 0;
+	carousel();
+
+	function carousel() {
+	  var i;
+	  var x = document.getElementsByClassName("slideshow");
+	  for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";  
+	  }
+	  currentSlide++;
+	  if (currentSlide > x.length) {currentSlide = 1}    
+	  x[currentSlide-1].style.display = "block";  
+	  setTimeout(carousel, 4000); // Change image every 2 seconds
+	}
+	</script>
 
   </body>
 </html>

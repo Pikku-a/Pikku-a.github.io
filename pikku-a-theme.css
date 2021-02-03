@@ -31,7 +31,14 @@
       clear: both;
       display: table;
     }
-
+	
+	/*SLIDESHOW*/
+	.slideshow {
+		width:100%;
+		height:auto;
+		margin-top: -10px;
+	}
+	
       /* INFO BOX
       #infobox {
         display: none;
