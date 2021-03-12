@@ -32,6 +32,14 @@
       display: table;
     }
 	
+	/*HR*/
+	hr {
+		width:50%;
+		color:green;
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+	
 	/*SLIDESHOW*/
 	.slideshow {
 		width:100%;

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html><head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Pikku-a.com News</title>
     <meta charset="UTF-8">
     <link rel="icon" href="https://pikku-a.com/planet%20favicon.gif" type="image/gif">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pikku-a.com News</title>
-    <meta name="description" content="News from pikku-a.com website, about games and comics, etc.">
+    <meta name="description" content="News from pikku-a.com website. See news about my games, comics, etc.">
     <meta name="keywords" content="news,pikku-a,pikku a,pikkua,videogames,games,adventure,pixelart,comics,webcomics">
     <link rel="stylesheet" type="text/css" href="pikku-a-theme.css">
 </head>
 
   <body bgcolor="#030303">
     <div class="contents">
-      <img style="width:100%" src="https://img.itch.zone/aW1hZ2UyL3VzZXIvNjE5ODI1LzExNzY4MzcucG5n/original/gJBx%2Fe.png" alt="banner art">
-      <h1>pikku-a.com news</h1><br><br><br>
+      <img style="width:100%" src="images/papparainen-banner.png" alt="banner art">
+      <h1 id="typewriterid"></h1><br><br><br>
                 
         <h2>30.1.2021</h2>
         <p>Epilogue for <a href="https://pikku-a.com/dr-atominus">Dr. Atominus</a> is available!</p>
@@ -30,7 +29,20 @@
         <p>Dr. Atominus (video game) is available on <a href="https://store.steampowered.com/app/1294750/Dr_Atominus/">Steam</a> and <a href="https://pikku-a.itch.io/dr-atominus">itch.io</a>.</p>
         <a href="https://store.steampowered.com/app/1294750/Dr_Atominus/"><img style="width:100%" src="header2.png"></a><br>
 
-        
+        <script>
+		var i = 0;
+		var txt = 'pikku-a.com news';
+		var speed = 50;
+
+		function typeWriter() {
+		  if (i < txt.length) {
+			document.getElementById("typewriterid").innerHTML += txt.charAt(i);
+			i++;
+			setTimeout(typeWriter, speed);
+		  }
+		}
+		typeWriter()
+		</script>
 
 <br><br><br>
 
@@ -38,7 +50,7 @@
 
       <footer>
 	  <a href="https://pikku-a.com/contact.html">Contact</a>
-       | © Pikku-a 2020
+       | © Pikku-a 2021
       </footer><br>
 
     </div>
