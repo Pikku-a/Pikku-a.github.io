@@ -3,4 +3,4 @@
 Tiedostot jotka ei ainakaan ole live-nettisivun tasalla: presskit, profile
 
 ## To do
-- "Follow me in these sites" ?
+- Make it more organized & same files as in website

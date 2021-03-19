@@ -4,7 +4,13 @@
 	p, footer {
 		font-size: 20px;
 	}
-
+	hr {
+		width:50%;
+		color:green;
+		margin-top:30px;
+		margin-bottom:30px;
+	}
+	
     /*Side by side images*/
     * {
       box-sizing: border-box;
@@ -18,9 +24,6 @@
         transition: transform 0.5s;
     }
     .column:hover {
-        /*transform: rotate(360deg);
-        -ms-transform: skew(-10deg,15deg);
-        transform: skew(-10deg,15deg);*/
         -ms-transform: skewY(20deg); /* IE 9 */
         transform: skewY(20deg);
     }
@@ -31,14 +34,6 @@
       clear: both;
       display: table;
     }
-	
-	/*HR*/
-	hr {
-		width:50%;
-		color:green;
-		margin-top:20px;
-		margin-bottom:20px;
-	}
 	
 	/*SLIDESHOW*/
 	.slideshow {
