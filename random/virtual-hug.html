@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Virtual hug</title>
+    </head>
+    
+    <style>
+        body {
+            text-align:center;
+        }
+        #myProgress {
+          width: 100%;
+          background-color: #ddd;
+        }
+
+        #myBar {
+          width: 0%;
+          height: 30px;
+          background-color: gray;
+          text-align: center;
+          line-height: 30px;
+          color: white;
+        }
+    </style>
+    
+    <body onload="load_hug()">
+
+        <h1 id="loading_text">Loading virtual hug... </h1>
+
+        <p id="hug"></p>
+
+        <div id="myProgress">
+          <div id="myBar">0%</div>
+        </div>
+
+        <br>
+        <textarea id="urlCopied" rows="1" cols="30"></textarea>
+        <button onclick="copy_link()">Copy link</button>
+
+        <script>
+        var i = 0;
+        function load_hug() {
+          if (i == 0) {
+            i = 1;
+            var elem = document.getElementById("myBar");
+            var width = 0;
+            var id = setInterval(frame, 20);
+            function frame() {
+              if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+                //Create image
+                var im = document.createElement("img");
+                im.src="icon.png"; //change this to correct image
+                document.body.insertBefore(im,hug);
+                //Change loading text
+                var txt = document.createTextNode("loaded!");
+                var element = document.getElementById("loading_text");
+                element.appendChild(txt);
+              }else{
+                width++;
+                elem.style.width = width + "%";
+                elem.innerHTML = width  + "%";
+              }
+            }
+          }
+        }
+        
+        function copy_link() {
+            var Url = document.getElementById("urlCopied");
+            Url.value = window.location.href;
+            Url.focus();
+            Url.select();  
+            document.execCommand("copy");
+        }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,51 @@
+.ss {
+    width:100%;
+    height:auto;
+}
+
+h2 {
+    padding: 10px;
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: courier new;
+    background-color: black;
+    color: white;
+}
+
+footer {
+    background-color: darkslategrey;
+    padding: 20px;
+}
+
+button {
+    background-color: cadetblue;
+    border: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    /*font-family: courier new;
+    font-weight: 800;*/
+}
+
+button:hover {
+    background-color: aqua;
+    cursor: pointer;
+}
+
+#headerContent {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.vid {
+    position: inherit;
+    min-width: 100%;
+    min-height: 480px;
+    overflow: hidden;
+    z-index: -1;
+}
+
