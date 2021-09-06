@@ -21,13 +21,17 @@
       width: 33.33%;
       margin: 5px;
       width:190px;
-        transition: transform 0.5s;
+      transition: transform 0.5s;
     }
     .column:hover {
         -ms-transform: skewY(20deg); /* IE 9 */
         transform: skewY(20deg);
     }
-
+	.column p {
+		color:white;
+		font-size:22px;
+	}
+	
     /* Clearfix (clear floats) */
     .row::after {
       content: "";
