@@ -1,4 +1,7 @@
-    a {
+    body {
+		background-color: #030303;
+	}
+	a {
       color: white;
     }
 	p, footer {
@@ -9,6 +12,9 @@
 		color:green;
 		margin-top:30px;
 		margin-bottom:30px;
+	}
+	img {
+		width:100%;
 	}
 	
     /*Side by side images*/
