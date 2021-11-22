@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Things.update.blog</title>
+		<meta name="robots" content="noindex,nofollow"/>
+		<link rel="stylesheet" type="text/css" href="../../themes/blog-theme.css">
+		
+	</head>
+	
+	<body style="background-color: #c5dbbd;">
+		<br><br><br><br><br>
+		<h1 id="typewriterid"></h1>
+		<script></script>
+		<br><br>
+		<p>Welcome.</p><br>
+		<p>...</p><br>
+		<p>Erm... This is a blog I made and I write here about my comics and games. Sometimes I will also write about other things.</p><br>
+		<p>As you can see, this blog is very simple and straight to the point. It doesn't waste your time, all my websites are designed to not waste time.</p><br>
+		<p>Enjoy?</p>
+		<script>
+		var i = 0;
+		var txt = 'Introduction';
+		var speed = 50;
+
+		function typeWriter() {
+		  if (i < txt.length) {
+			document.getElementById("typewriterid").innerHTML += txt.charAt(i);
+			i++;
+			setTimeout(typeWriter, speed);
+		  }
+		}
+		typeWriter()
+		</script>
+		
+		<footer>
+			<a href="../blog.html">Main page</a>
+			|
+			<a href="http://pikku-a.com/">Visit	 the planet?</a>
+			|
+			<a href="../about.html">About</a>
+			© Pikku-a
+		</footer><br>
+	</body>
+</html>
