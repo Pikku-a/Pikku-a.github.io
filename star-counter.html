@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Star-Counter</title>
+		
+		<style>
+			body {
+				margin-left:30px;
+				font-family:arial;
+				background-color:#D2F5DD;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	<h1>Star-Counter</h1>
+	<h2>Calculate how good a game was</h2>
+	<br>
+	<h3>Gameplay</h3>
+	<input type="range" min="1" max="5" value="3" id="slider1">
+	<h3>Story</h3>
+	<input type="range" min="1" max="5" value="3" id="slider2">
+	<h3>Graphics</h3>
+	<input type="range" min="1" max="5" value="3" id="slider3">
+	<h3>Music</h3>
+	<input type="range" min="1" max="5" value="3" id="slider4">	
+	<h3>Aftertaste</h3>
+	<input type="range" min="1" max="5" value="3" id="slider5">	
+	
+	<h3>Result</h3>
+	
+	<input id="b" value="Show result" type="button" onclick="show_result()">
+	
+	<br><br><br><a href="https://pikku-a.com">Made by Pikku-a</a><!-- | <a href="https://github.com/Pikku-a/star-counter">Source code</a--><br><br>
+	
+	<script>
+	function show_result() {
+		var s1 = document.getElementById("slider1").value;
+		var s2 = document.getElementById("slider2").value;
+		var s3 = document.getElementById("slider3").value;
+		var s4 = document.getElementById("slider4").value;
+		var s5 = document.getElementById("slider5").value;
+		var keskiarvo = (parseInt(s1)+parseInt(s2)+parseInt(s3)+parseInt(s4)+parseInt(s5))/5;
+		
+		/*for (var i=0;i<keskiarvo;i++) {
+			//add star image
+		}*/
+		
+		//Näytä keskiarvo
+		var newDiv = document.createElement("p"); 
+		var newContent = document.createTextNode(keskiarvo+" stars");
+		newDiv.appendChild(newContent);
+		document.body.insertBefore(newDiv,b);
+	}
+	
+	</script>
+	
+	</body>
+</html>
