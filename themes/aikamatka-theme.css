@@ -1,0 +1,18 @@
+* {
+	padding:0px;
+	margin:0px;
+}
+body {
+	text-align:center;
+	background-color:#ff1a75;
+	color:yellow;
+}
+h2 {
+	color:#ffff66;
+}
+img {
+	width:100%;
+}
+footer {
+	padding:20px;
+}
