@@ -1,0 +1,24 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.contents {
+	color: black;
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+	font-family: courier new;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1000px) {
+	.contents {
+	  width: 80%;
+	}
+}
+@media screen and (max-width: 500px) {
+	.contents {
+	  width: 100%;
+	}
+}
