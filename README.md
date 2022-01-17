@@ -1,4 +1,4 @@
-# pikku-a.com
+# pikkua.com
 
 ## To do
 - Make it more organized
