@@ -4,6 +4,12 @@
 	a {
       color: white;
     }
+    .second a {
+		color: Chartreuse;
+    }
+    .third a {
+		color:yellow;
+    }
 	p, footer {
 		font-size: 20px;
 	}
