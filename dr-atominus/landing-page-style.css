@@ -11,8 +11,14 @@ body {
     margin: 0 auto;
     text-align: center;
     font-family: courier new;
+	font-size: 20px;
     background-color: black;
     color: white;
+}
+
+hr {
+	color: cadetblue;
+	width: 60%;
 }
 
 footer {
@@ -49,3 +55,6 @@ button:hover {
     z-index: -1;
 }
 
+iframe {
+	max-width: 100%;
+}
