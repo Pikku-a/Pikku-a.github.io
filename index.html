@@ -8,6 +8,7 @@
 		<meta name="description" content="Homepage of Pikku-a. Here you can see my video games, comics, software, game making assets, etc.">
 		<meta name="keywords" content="pikku-a,pikku a,pikkua,flyinglegends_studio,flyinglegends studio,videogames,games,adventure,pixelart,comics,webcomics">
 		<link rel="stylesheet" type="text/css" href="pikku-a-theme.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	</head>
 
   <body>
@@ -72,13 +73,13 @@
       }
       </script>-->
 
-<br><br><hr><br>
-        <!--NEWS BANNER-->
-        <h2>News</h2>
-        <br>
+		<br><br><hr><br>
 		
-		<h2>17.1.2022</h2>
-		<p>The website has moved. It's now <b>pikkua.com</b> (not pikku-a.com anymore).</p>
+        <!--NEWS-->
+        <h2>News</h2>
+		<div id="news"></div>
+		
+		<script>$("#news").load("news.html #latest");</script>
 		
 		<br><br>
         <a href="news.html">See all news</a>
