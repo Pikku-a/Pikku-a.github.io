@@ -7,16 +7,16 @@
 	<meta name="description" content="This is a simple dice.">
 	</head>
 <body style="background-color:black;">
-<div style="margin: 0 auto;text-align:center;margin-top:50px;">
-<button style="font-size:30px;font-family:sans;background-color:yellow;border-color:yellow;" onclick="dice()">Throw the dice</button>
-<p style="font-size:30px;font-family:sans;color:white;" id="num"></p>
+	<div style="margin: 0 auto;text-align:center;margin-top:50px;">
+		<button style="font-size:30px;font-family:sans;background-color:yellow;border-color:yellow;" onclick="dice()">Throw the dice</button>
+		<p style="font-size:30px;font-family:sans;color:white;" id="num"></p>
 
-<script>
-function dice() {
-  var x = document.getElementById("num")
-  x.innerHTML = Math.floor((Math.random() * 6) + 1);
-}
-</script>
-</div>
-</body>
+		<script>
+		function dice() {
+		  var x = document.getElementById("num")
+		  x.innerHTML = Math.floor((Math.random() * 6) + 1);
+		}
+		</script>
+	</div>
+	</body>
 </html>
