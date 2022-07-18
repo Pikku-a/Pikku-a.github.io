@@ -1,5 +1,5 @@
 body {
-	background-image: url('background.png');
+	background-image: url('../images/new-supper-banana/background.png');
 	text-align:center;
 	font-size:24px;
 	font-family: candara;
@@ -8,6 +8,7 @@ body {
 }
 img {
 	max-width:100%;
+	height:auto;
 }
 hr {
 	margin-top:70px;
