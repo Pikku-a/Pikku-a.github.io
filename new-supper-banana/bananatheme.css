@@ -38,18 +38,18 @@ lite-youtube {
 	body {
 		width:80%;
 	}
+
 	/* VIDEO */
 	.videocontainer {
 		position: relative;
 		padding-bottom: 56.25%;
 		padding-top: 30px; height: 0; overflow: hidden;
+		margin-bottom:50px;
 	}
 	.videocontainer iframe,
 	.videocontainer object,
 	.videocontainer embed {
 		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
 	}
