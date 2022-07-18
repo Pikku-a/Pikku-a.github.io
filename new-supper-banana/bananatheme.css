@@ -7,7 +7,6 @@ body {
 	margin: 0 auto;
 }
 img {
-	aspect-ratio: attr(width) / attr(height);
 	max-width:100%;
 	height:auto;
 }
