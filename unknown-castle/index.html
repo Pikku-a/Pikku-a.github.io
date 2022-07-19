@@ -1,142 +1,16 @@
-<!--DOCTYPE HTML-->
-
-<html>
+<!--DOCTYPE html-->
+<html lang="en">
 	<head>
-		<!--Favicon-->
 		<link rel="shortcut icon" type="image/png" href="../images/unknown-castle/unknown castle icon5.png"/>
-		<!--Website title-->
-		<title>Unknown Castle</title>
-		<!--Meta-->
+		<title>Unknown Castle - Puzzle adventure where you control 2 characters</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Charset-->
 		<meta charset="UTF-8">
-		<meta name="title" content="Unknown Castle">
 		<meta name="description" content="Unknown Castle is a puzzle adventure, where you explore your old family castle, controlling 2 characters helping each other.">
 	    <meta name="keywords" content="unknown castle,uknown castle,unkown castle,flyinglegends studio,pikku-a,pikkua,pikku a,videogame,game,puzzle,adventure,atmospheric">
 	    <meta name="author" content="Pikku-a">
-
-
-		<style>
-			body {
-			 background-image: url("wall.png");
-			 background-color: #cccccc;
-			}
-
-			/* Background */
-			.bg {
-			/* The image used */
-			background-image: url("../images/unknown-castle/banner new big.png");
-
-			height: 15%;
-
-			/* Center and scale the image nicely */
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: contain;
-			}
-
-			hr {
-				color: #502d72;
-			}
-
-			/* title */
-			.title {
-				text-align: center;
-				text-color: white;
-				color: white;
-				width: 100%;
-				border: 25px #333;
-				padding-left: 0;
-				padding-right: 0;
-				padding-bottom: 25px;
-				padding-top: 0;
-				font-size: 20px;
-				font-family: courier new;
-
-			}
-
-			/* CONTENTS */
-			.contents {
-				color: #d5d9e0;
-				text-align: center;
-				width: 60%;
-				margin: 0 auto;
-			}
-            h3 {
-                font-size: 24px;
-            }
-
-			/* VIDEO */
-			.videocontainer {
-				position: relative;
-				padding-bottom: 56.25%;
-				padding-top: 30px; height: 0; overflow: hidden;
-			}
-			.videocontainer iframe,
-			.videocontainer object,
-			.videocontainer embed {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%
-			}
-
-			/* TESTIMONIALS 
-			.testimonials {
-				font-size: 25px;
-				width: 80%
-				margin: 0 auto;
-				padding-top: 30px;
-			}*/
-
-			/* SCREENSHOTS */
-			.ss {
-				max-width: 100%;
-				height: auto;
-			}
-
-			/* FOOTER */
-			.footer {
-				position: initial;
-				padding: 2px;
-				width: 100%;
-				background-color: #502d72;
-				color: white;
-				text-align: center;
-			}
-
-			/* WIDGETS */
-			.itchio {
-				width: 552px;
-				height: 170px;
-				padding-top: 10px;
-				padding-bottom: 20px;
-				max-width: 100%;
-			}
-			.steam {
-				width: 552px;
-				height: 200px;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				max-width: 100%;
-			}
-
-			/* RESPONSIVE */
-			@media screen and (max-width: 700px) {
-				.contents {
-					width: 80%;
-				}
-			}
-			@media screen and (max-width: 500px) {
-				.contents {
-					width: 100%;
-				}
-			}
-
-		</style>
+		<link rel="stylesheet" href="castletheme.css"/>
+		<link rel="stylesheet" href="../scripts/lite-yt-embed.css"/>
 	</head>
-
 
 	<body style="background-image: url('../images/unknown-castle/wall.png')">
 
@@ -148,8 +22,11 @@
 			<!-- TITLE -->
 			<div class="title" align="center">A puzzle adventure, where you control 2 characters helping each other.</div>
 			<!-- TRAILER -->
-			<div class="videocontainer">
+			<!--div class="videocontainer">
 				<iframe width="1280" height="720" src="https://www.youtube.com/embed/2ZdOfxrXvAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div-->
+			<div class="videocontainer">
+				<lite-youtube videoid="2ZdOfxrXvAM" playlabel="Play trailer"></lite>
 			</div><br><br><br><br><br>
 			<h1>Get it on Steam:</h1>
 			<iframe class="steam" src="https://store.steampowered.com/widget/1090650/" frameborder="0" width="646" height="190"></iframe>
@@ -173,7 +50,7 @@
 			<br><br><br>
 			<!-- SCREENSHOTS -->
 			<h1>UNKNOWN CASTLE</h1>
-			<h3>Unknown Castle is a puzzle adventure, where you explore your old family castle, controlling 2 characters helping each other.</h3><br><br><br>
+			<h3>Unknown Castle is a puzzle adventure, where you explore your old family castle, controlling 2 characters helping each other. There is also local multiplayer.</h3><br><br><br>
 			<img src="../images/unknown-castle/unknown castle icon5.png" alt="Unknown Castle icon">
 			<br><br>
 			<h2>SOLVE PUZZLES</h2>
@@ -191,7 +68,7 @@
 			<br><br><br><br><br>
 			<!--FEATURES-->
 			<h2>FEATURES</h2><br>
-			<ul style="text-align:left; font-size:20px;"><li><strong>31 levels</strong> full of challenging puzzles + some secret rooms!</li><br>
+			<ul><li><strong>31 levels</strong> full of challenging puzzles + some secret rooms!</li><br>
 			<li><strong>Dangers:</strong> In your journey you will encounter many dangers. Avoid dangerous traps and angry bats!</li><br>
 			<li><strong>Secrets:</strong> There are secrets even in the level menus!</li><br>
 			<li><strong>Unicorns...?</strong> No. It's just the imagination of great-grandfather.</li><br>
@@ -205,7 +82,7 @@
 		
 			<!-- CREDITS -->
 			<div class="footer" style="background-color:#191122">
-			<br><br><a style="color:white;font-size:20px;border-style: solid;border-width:1px;padding:5px;" href="/press">Press kit</a><br><br>
+			<br><br><a style="color:white;font-size:20px;border-style: solid;border-width:1px;padding:5px;" href="../press/unknown-castle">Press kit</a><br><br>
 			<!--<h2>CREDITS</h2>
 			<p>Programming, pixel art and story</p>
 			<p>Pikku-a</p>
@@ -220,7 +97,8 @@
 
 		<!-- FOOTER -->
 		<footer class="footer">
-			<p>&copy; Pikku-a 2020 | <a style="color:white" href="../">Main page</a></p>
+			<a href="../">&copy; Pikku-a 2020-2022</a></p>
 		</footer>
+		<script src="../scripts/lite-yt-embed.js"></script>
 	</body>
 </html>
