@@ -26,31 +26,10 @@ footer {
     padding: 20px;
 }
 
-button {
-    background-color: cadetblue;
-    border: 0px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    /*font-family: courier new;
-    font-weight: 800;*/
-}
-
-button:hover {
-    background-color: aqua;
-    cursor: pointer;
-}
-
-#headerContent {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
-
-.vid {
+video {
     position: inherit;
-    min-width: 100%;
-    min-height: 480px;
+    max-width: 100%;
+    height: auto;
     overflow: hidden;
     z-index: -1;
 }
@@ -58,3 +37,36 @@ button:hover {
 iframe {
 	max-width: 100%;
 }
+
+a {
+	color:white;
+}
+a:visited {
+	color:grey;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	video {
+		max-width:90%;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1600px) {
+	video {
+		max-width:85%;
+	}
+}
+
+/*button {
+    background-color: cadetblue;
+    border: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    /*font-family: courier new;
+    font-weight: 800;*//*
+}
+
+button:hover {
+    background-color: aqua;
+    cursor: pointer;
+}*/

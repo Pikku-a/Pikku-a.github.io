@@ -6,3 +6,4 @@
 - Make it more organized
 - Online notebook synchronization
 - More optimization
+- Rename image folder to media
