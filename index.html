@@ -83,7 +83,12 @@
 			<h2>News</h2>
 			<div id="news"></div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-			<script>$("#news").load("news.html #latest");</script>
+			<script>
+			$.ajaxSetup ({
+				// Disable caching of AJAX responses */
+				cache: false
+			});
+			$("#news").load("news.html #latest");</script>
 			
 			<br><br>
 			<a href="news.html">See all news</a>
