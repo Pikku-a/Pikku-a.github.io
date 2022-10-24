@@ -1,37 +1,31 @@
 {
    "frontpage": {
 	   "en": {
-		   {
-			   "subtitle": "Welcome to the planet. What place would you like to visit?",
-			   "videogames": "Video games",
-			   "comics": "Comics",
-			   "software": "Software",
-			   "assets": "Assets for game making",
-			   "news": "News",
-			   "seeallnews": "See all news"
-		   }
+		   "subtitle": "Welcome to the planet. What place would you like to visit?",
+		   "videogames": "Video games",
+		   "comics": "Comics",
+		   "software": "Software",
+		   "assets": "Assets for game making",
+		   "news": "News",
+		   "seeallnews": "See all news"
 	   }
 	   "fi": {
-		   {
-			   "subtitle": "Tervetuloa planeetalle. Missä paikassa haluaisit käydä?",
-			   "videogames": "Videopelit",
-			   "comics": "Sarjakuvat",
-			   "software": "Ohjelmistot",
-			   "assets": "Assets for game making",
-			   "news": "Uutiset",
-			   "seeallnews": "Katso kaikki uutiset"
-		   }
+		   "subtitle": "Tervetuloa planeetalle. Missä paikassa haluaisit käydä?",
+		   "videogames": "Videopelit",
+		   "comics": "Sarjakuvat",
+		   "software": "Ohjelmistot",
+		   "assets": "Assets for game making",
+		   "news": "Uutiset",
+		   "seeallnews": "Katso kaikki uutiset"
 	   }
 	   "es": {
-		   {
-			   "subtitle": "Bienvenido al planeta. ¿Qué lugar te gustaría visitar?",
-			   "videogames": "Videojuegos",
-			   "comics": "Cómics",
-			   "software": "Software",
-			   "assets": "Assets for game making",
-			   "news": "Noticias",
-			   "seeallnews": "Ver todas las noticias"
-		   }
+		   "subtitle": "Bienvenido al planeta. ¿Qué lugar te gustaría visitar?",
+		   "videogames": "Videojuegos",
+		   "comics": "Cómics",
+		   "software": "Software",
+		   "assets": "Assets for game making",
+		   "news": "Noticias",
+		   "seeallnews": "Ver todas las noticias"
 	   }
    }
 }
