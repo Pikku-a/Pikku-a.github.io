@@ -96,33 +96,43 @@
 
 			<br><hr>
 
-			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022</footer>
+			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022 | 
+			
+			<select onchange="languageChange(this.value)" id="languageselect">
+			  <option value="en" selected>English</option>
+			  <option value="fi">Finnish</option>
+			  <option value="es">Spanish</option>
+			</select>
+
+			</footer>
 			
 			<!--GET TRANSLATIONS-->
 			<script>
-			var language = "es"; //Save and load language using localstorage - and add a setting to change it to the website
-			$(document).ready(function() {
-				$.getJSON("text/pikkuacom.json",function(data) {
-					if (language == "fi") {
-						$("#subtitle").text(data.frontpage.fi.subtitle);
-						console.log("jquery: "+data.frontpage.fi.subtitle);
-						$("#videogames").text(data.frontpage.fi.videogames);
-						$("#comics").text(data.frontpage.fi.comics);
-						$("#software").text(data.frontpage.fi.software);
-						$("#assets").text(data.frontpage.fi.assets);
-						$("#seeallnews").text(data.frontpage.fi.seeallnews);
-						//$(jotain).appendTo("#subtitle");
-						//$("#name").text(data.data.name);
-					}else if (language == "es") {
-						$("#subtitle").text(data.frontpage.es.subtitle);
-						$("#videogames").text(data.frontpage.es.videogames);
-						$("#comics").text(data.frontpage.es.comics);
-						$("#software").text(data.frontpage.es.software);
-						$("#assets").text(data.frontpage.es.assets);
-						$("#seeallnews").text(data.frontpage.es.seeallnews);
-					}
-				})
-			});
+			var language = "en"; //Save and load language using localstorage - and add a setting to change it to the website
+			function languageChange(lang) {
+				$(document).ready(function() {
+					$.getJSON("text/pikkuacom.json",function(data) {
+						if (lang == "fi") {
+							$("#subtitle").text(data.frontpage.fi.subtitle);
+							console.log("jquery: "+data.frontpage.fi.subtitle);
+							$("#videogames").text(data.frontpage.fi.videogames);
+							$("#comics").text(data.frontpage.fi.comics);
+							$("#software").text(data.frontpage.fi.software);
+							$("#assets").text(data.frontpage.fi.assets);
+							$("#seeallnews").text(data.frontpage.fi.seeallnews);
+							//$(jotain).appendTo("#subtitle");
+							//$("#name").text(data.data.name);
+						}else if (lang == "es") {
+							$("#subtitle").text(data.frontpage.es.subtitle);
+							$("#videogames").text(data.frontpage.es.videogames);
+							$("#comics").text(data.frontpage.es.comics);
+							$("#software").text(data.frontpage.es.software);
+							$("#assets").text(data.frontpage.es.assets);
+							$("#seeallnews").text(data.frontpage.es.seeallnews);
+						}
+					})
+				});
+			}
 			
 			/*/Kokeilu ilman jquerya
 			function getElement(id) {
