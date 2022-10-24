@@ -98,17 +98,24 @@
 
 			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022 | 
 			
-			<select onchange="languageChange(this.value)" id="languageselect">
+			<select onchange="languageChange(this.value)">
 			  <option value="en">English</option>
-			  <option value="fi">Finnish</option>
-			  <option value="es">Spanish</option>
+			  <option value="fi">Suomi</option>
+			  <option value="es">Español</option>
 			</select>
 
 			</footer>
 			
 			<!--GET TRANSLATIONS-->
 			<script>
-			var language = "en"; //Save and load language using localstorage - and add a setting to change it to the website
+			var loaded = false;
+			if (loaded == false) {
+				loaded = true;
+				var language = localStorage.getItem("language");
+				languageChange(language);
+				console.log("Language loaded.");
+			}
+
 			function languageChange(lang) {
 				$(document).ready(function() {
 					$.getJSON("text/pikkuacom.json",function(data) {
@@ -119,6 +126,7 @@
 							$("#software").text(data.frontpage.en.software);
 							$("#assets").text(data.frontpage.en.assets);
 							$("#seeallnews").text(data.frontpage.en.seeallnews);
+							localStorage.setItem("language","en");
 						}else if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
 							console.log("jquery: "+data.frontpage.fi.subtitle);
@@ -129,6 +137,7 @@
 							$("#seeallnews").text(data.frontpage.fi.seeallnews);
 							//$(jotain).appendTo("#subtitle");
 							//$("#name").text(data.data.name);
+							localStorage.setItem("language","fi");
 						}else if (lang == "es") {
 							$("#subtitle").text(data.frontpage.es.subtitle);
 							$("#videogames").text(data.frontpage.es.videogames);
@@ -136,7 +145,9 @@
 							$("#software").text(data.frontpage.es.software);
 							$("#assets").text(data.frontpage.es.assets);
 							$("#seeallnews").text(data.frontpage.es.seeallnews);
+							localStorage.setItem("language","es");
 						}
+						console.log("Language changed and saved.");
 					})
 				});
 			}
