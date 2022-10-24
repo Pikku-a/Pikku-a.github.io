@@ -19,7 +19,7 @@
 				<img src="images/planetbig2.gif" alt="planet gif">
 			</video>
 			
-			<h1>Welcome to the planet. What place would you like to visit?</h1><br><br><br>
+			<h1 id="subtitle">Welcome to the planet. What place would you like to visit?</h1><br><br><br>
 
 			<div class="row">
 				<!--VIDEOGAMES-->
@@ -97,7 +97,21 @@
 			<br><hr>
 
 			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022</footer>
-
+			
+			<!--GET TRANSLATIONS-->
+			<script>
+			$(document).ready(function() {
+				var url = "text/pikkuacom.json";
+				$.getJSON( url, {
+				format: "json"
+				})
+			  .done(function(data) {
+				 $("#subtitle").text(data.frontpage.subtitle);
+				 //$("#name").text(data.data.name);
+			  });
+			});
+			</script>
+			
 		</div>
 	</body>
 </html>
