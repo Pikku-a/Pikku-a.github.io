@@ -100,7 +100,7 @@
 			
 			<!--GET TRANSLATIONS-->
 			<script>
-			var language = "en"; //Save and load language using localstorage - and add a setting to change it to the website
+			var language = "es"; //Save and load language using localstorage - and add a setting to change it to the website
 			$(document).ready(function() {
 				$.getJSON("text/pikkuacom.json",function(data) {
 					if (language == "fi") {
@@ -113,6 +113,13 @@
 						$("#seeallnews").text(data.frontpage.fi.seeallnews);
 						//$(jotain).appendTo("#subtitle");
 						//$("#name").text(data.data.name);
+					}else if (language == "es") {
+						$("#subtitle").text(data.frontpage.es.subtitle);
+						$("#videogames").text(data.frontpage.es.videogames);
+						$("#comics").text(data.frontpage.es.comics);
+						$("#software").text(data.frontpage.es.software);
+						$("#assets").text(data.frontpage.es.assets);
+						$("#seeallnews").text(data.frontpage.es.seeallnews);
 					}
 				})
 			});
