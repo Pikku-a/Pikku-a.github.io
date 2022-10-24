@@ -1,6 +1,6 @@
 {
    "frontpage": {
-	   "en" {
+	   "en": {
 		   {
 			   "subtitle": "Welcome to the planet. What place would you like to visit?",
 			   "videogames": "Video games",
@@ -11,7 +11,7 @@
 			   "seeallnews": "See all news"
 		   }
 	   }
-	   "fi" {
+	   "fi": {
 		   {
 			   "subtitle": "Tervetuloa planeetalle. Missä paikassa haluaisit käydä?",
 			   "videogames": "Videopelit",
@@ -22,7 +22,7 @@
 			   "seeallnews": "Katso kaikki uutiset"
 		   }
 	   }
-	   "es" {
+	   "es": {
 		   {
 			   "subtitle": "Bienvenido al planeta. ¿Qué lugar te gustaría visitar?",
 			   "videogames": "Videojuegos",
