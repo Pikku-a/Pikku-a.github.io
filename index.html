@@ -98,7 +98,7 @@
 
 			<footer><a href="contact.html" id="contact">Contact</a> | © Pikku-a 2019-2022 | 
 			
-			<select onchange="languageChange(this.value)">
+			<select onchange="languageChange(this.value)" id="selectlanguage">
 			  <option value="en">English</option>
 			  <option value="fi">Suomi</option>
 			  <option value="es">Español</option>
@@ -127,6 +127,7 @@
 							$("#assets").text(data.frontpage.en.assets);
 							$("#seeallnews").text(data.frontpage.en.seeallnews);
 							$("#contact").text(data.general.en.contact);
+							document.getElementById("selectlanguage").selected = "en";
 							localStorage.setItem("language","en");
 						}else if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
@@ -136,6 +137,7 @@
 							$("#assets").text(data.frontpage.fi.assets);
 							$("#seeallnews").text(data.frontpage.fi.seeallnews);
 							$("#contact").text(data.general.fi.contact);
+							document.getElementById("selectlanguage").selected = "fi";
 							//$(jotain).appendTo("#subtitle");
 							//$("#name").text(data.data.name);
 							localStorage.setItem("language","fi");
@@ -147,6 +149,7 @@
 							$("#assets").text(data.frontpage.es.assets);
 							$("#seeallnews").text(data.frontpage.es.seeallnews);
 							$("#contact").text(data.general.es.contact);
+							document.getElementById("selectlanguage").selected = "es";
 							localStorage.setItem("language","es");
 						}
 						console.log("Language changed and saved.");

@@ -3,7 +3,6 @@
 	   "en": {
 		   "subtitle": "Welcome to the planet. What place would you like to visit?",
 		   "videogames": "Video games",
-		   "comics": "Comics",
 		   "software": "Software",
 		   "assets": "Assets for game making",
 		   "news": "News",
@@ -12,7 +11,6 @@
 	   "fi": {
 		   "subtitle": "Tervetuloa planeetalle. Missä paikassa haluaisit käydä?",
 		   "videogames": "Videopelit",
-		   "comics": "Sarjakuvat",
 		   "software": "Ohjelmistot",
 		   "assets": "Assets for game making",
 		   "news": "Uutiset",
@@ -21,7 +19,6 @@
 	   "es": {
 		   "subtitle": "Bienvenido al planeta. ¿Qué lugar te gustaría visitar?",
 		   "videogames": "Videojuegos",
-		   "comics": "Cómics",
 		   "software": "Software",
 		   "assets": "Assets for game making",
 		   "news": "Noticias",
