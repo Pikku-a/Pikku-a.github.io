@@ -117,7 +117,7 @@
 			.then(res => res.json())
 			.then((res) => {
 			  const data = res.data;
-			  getElement('subtitle').innerHTML =  data.subtitle;
+			  getElement('subtitle').innerHTML =  data.frontpage.fi.subtitle;
 			  getElement('symbol').innerHTML = 'Symbol: ' + data.symbol;
 			  getElement('rank').innerHTML = 'Rank: ' + data.rank;
 			  getElement('price').innerHTML = 'Price: ' + data.quotes.USD.price;
