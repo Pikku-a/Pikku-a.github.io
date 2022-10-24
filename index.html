@@ -99,7 +99,7 @@
 			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022 | 
 			
 			<select onchange="languageChange(this.value)" id="languageselect">
-			  <option value="en" selected>English</option>
+			  <option value="en">English</option>
 			  <option value="fi">Finnish</option>
 			  <option value="es">Spanish</option>
 			</select>
@@ -112,7 +112,14 @@
 			function languageChange(lang) {
 				$(document).ready(function() {
 					$.getJSON("text/pikkuacom.json",function(data) {
-						if (lang == "fi") {
+						if (lang == "en") {
+							$("#subtitle").text(data.frontpage.en.subtitle);
+							$("#videogames").text(data.frontpage.en.videogames);
+							$("#comics").text(data.frontpage.en.comics);
+							$("#software").text(data.frontpage.en.software);
+							$("#assets").text(data.frontpage.en.assets);
+							$("#seeallnews").text(data.frontpage.en.seeallnews);
+						}else if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
 							console.log("jquery: "+data.frontpage.fi.subtitle);
 							$("#videogames").text(data.frontpage.fi.videogames);
