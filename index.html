@@ -26,25 +26,25 @@
 				<div class="column" title="Pikku-a Games page">
 				  <a href="videogames.html">
 					<img src="images/thumbnails/unknown castle thumbnail.jpg" alt="Thumbnail of a game" width="190">
-				  </a><h2>Video games</h2>
+				  </a><h2 id="videogames">Video games</h2>
 				</div>
 				<!--COMICS-->
 				<div class="column" title="Comics">
 				  <a href="comics.html">
 					<img src="images/thumbnails/renewed dreams thumbnail.jpg" alt="Thumbnail of a comic" width="190">
-				  </a><h2>Comics</h2>
+				  </a><h2 id="comics">Comics</h2>
 				</div>
 				<!--SOFTWARE-->
 				<div class="column" title="Software & tools">
 				  <a href="websites.html">
 					<img src="images/thumbnails/code.jpg" alt="Thumbnail of a program" width="190">
-				  </a><h2>Software</h2>
+				  </a><h2 id="software">Software</h2>
 				</div>
 				<!--GAMEDEV-->
 				<div class="column" title="My game making assets from GameMaker Marketplace">
 				  <a href="https://marketplace.yoyogames.com/publishers/2939/pikku-a">
 					<img src="images/thumbnails/dialogue engine icon.png" alt="Thumbnail of a game making asset (dialogue engine)" width="190">
-				  </a><h2>Assets for game making</h2>
+				  </a><h2 id="assets">Assets for game making</h2>
 				</div>
 				<!--BOOKS & STORIES (or blog?)-->
 				<!--div class="column" title="Kirjoja & kirjoituksia">
@@ -92,7 +92,7 @@
 			$("#news").load("news.html #latest");</script>
 			
 			<br><br>
-			<a href="news.html">See all news</a>
+			<a href="news.html" id="seeallnews">See all news</a>
 
 			<br><hr>
 
@@ -100,12 +100,20 @@
 			
 			<!--GET TRANSLATIONS-->
 			<script>
+			var language = "en"; //Save and load language using localstorage - and add a setting to change it to the website
 			$(document).ready(function() {
 				$.getJSON("text/pikkuacom.json",function(data) {
-					$("#subtitle").text(data.frontpage.fi.subtitle);
-					console.log("jquery: "+JSON.stringify(data.frontpage.fi.subtitle));
-					//$(jotain).appendTo("#subtitle");
-					//$("#name").text(data.data.name);
+					if (language == "fi") {
+						$("#subtitle").text(data.frontpage.fi.subtitle);
+						console.log("jquery: "+data.frontpage.fi.subtitle);
+						$("#videogames").text(data.frontpage.fi.videogames);
+						$("#comics").text(data.frontpage.fi.comics);
+						$("#software").text(data.frontpage.fi.software);
+						$("#assets").text(data.frontpage.fi.assets);
+						$("#seeallnews").text(data.frontpage.fi.seeallnews);
+						//$(jotain).appendTo("#subtitle");
+						//$("#name").text(data.data.name);
+					}
 				})
 			});
 			
