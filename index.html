@@ -101,14 +101,11 @@
 			<!--GET TRANSLATIONS-->
 			<script>
 			$(document).ready(function() {
-				var url = "text/pikkuacom.json";
-				$.getJSON( url, {
-				format: "json"
+				$.getJSON("text/pikkuacom.json",function(data) {
+					$("#subtitle").text(data.fi.frontpage.subtitle);
+					//$(jotain).appendTo("#subtitle");
+					//$("#name").text(data.data.name);
 				})
-			  .done(function(data) {
-				 $("#subtitle").text(fi.frontpage.subtitle);
-				 //$("#name").text(data.data.name);
-			  });
 			});
 			</script>
 			
