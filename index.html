@@ -127,7 +127,7 @@
 							$("#assets").text(data.frontpage.en.assets);
 							$("#seeallnews").text(data.frontpage.en.seeallnews);
 							$("#contact").text(data.general.en.contact);
-							document.getElementById("selectlanguage").selected = "en";
+							document.getElementById("selectlanguage").options[0].selected = true;
 							localStorage.setItem("language","en");
 						}else if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
@@ -137,7 +137,7 @@
 							$("#assets").text(data.frontpage.fi.assets);
 							$("#seeallnews").text(data.frontpage.fi.seeallnews);
 							$("#contact").text(data.general.fi.contact);
-							document.getElementById("selectlanguage").selected = "fi";
+							document.getElementById("selectlanguage").options[1].selected = true;
 							//$(jotain).appendTo("#subtitle");
 							//$("#name").text(data.data.name);
 							localStorage.setItem("language","fi");
@@ -149,7 +149,7 @@
 							$("#assets").text(data.frontpage.es.assets);
 							$("#seeallnews").text(data.frontpage.es.seeallnews);
 							$("#contact").text(data.general.es.contact);
-							document.getElementById("selectlanguage").selected = "es";
+							document.getElementById("selectlanguage").options[2].selected = true;
 							localStorage.setItem("language","es");
 						}
 						console.log("Language changed and saved.");
