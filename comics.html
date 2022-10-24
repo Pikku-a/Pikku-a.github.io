@@ -13,7 +13,7 @@
   <body>
     <div class="contents">
 	  <br><br><br>
-      <h1>Comics</h1>
+      <h1 id="comics">Comics</h1>
 	  <h3>By Pikku-a</h3><br><br><br>
 
       <div class="row">
@@ -62,8 +62,40 @@
 
       </div>
 
-      <footer><a href="index.html">Back to the planet</a> | © Pikku-a 2019-2022</footer>
-    </div>
+      <footer><a href="index.html" id="tofrontpage">Back to the planet</a> | © Pikku-a 2019-2022</footer>
+    
+		<script>
+		var loaded = false;
+		if (loaded == false) {
+			loaded = true;
+			var language = localStorage.getItem("language");
+			languageChange(language);
+			console.log("Language loaded.");
+		}
 
+		function languageChange(lang) {
+			$(document).ready(function() {
+				$.getJSON("text/pikkuacom.json",function(data) {
+					if (lang == "en") {
+						$("#comics").text(data.general.en.comics);
+						$("#tofrontpage").text(data.general.en.tofrontpage);
+						localStorage.setItem("language","en");
+					}else if (lang == "fi") {
+						$("#comics").text(data.general.fi.comics);
+						$("#tofrontpage").text(data.general.en.tofrontpage);
+						localStorage.setItem("language","fi");
+					}else if (lang == "es") {
+						$("#comics").text(data.general.es.comics);
+						$("#tofrontpage").text(data.general.en.tofrontpage);
+						localStorage.setItem("language","es");
+					}
+					console.log("Language changed and saved.");
+				})
+			});
+		}
+		</script>
+    
+    </div>
+    
   </body>
 </html>

@@ -96,7 +96,7 @@
 
 			<br><hr>
 
-			<footer><a href="contact.html">Contact</a> | © Pikku-a 2019-2022 | 
+			<footer><a href="contact.html" id="contact">Contact</a> | © Pikku-a 2019-2022 | 
 			
 			<select onchange="languageChange(this.value)">
 			  <option value="en">English</option>
@@ -122,29 +122,31 @@
 						if (lang == "en") {
 							$("#subtitle").text(data.frontpage.en.subtitle);
 							$("#videogames").text(data.frontpage.en.videogames);
-							$("#comics").text(data.frontpage.en.comics);
+							$("#comics").text(data.general.en.comics);
 							$("#software").text(data.frontpage.en.software);
 							$("#assets").text(data.frontpage.en.assets);
 							$("#seeallnews").text(data.frontpage.en.seeallnews);
+							$("#contact").text(data.general.en.contact);
 							localStorage.setItem("language","en");
 						}else if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
-							console.log("jquery: "+data.frontpage.fi.subtitle);
 							$("#videogames").text(data.frontpage.fi.videogames);
-							$("#comics").text(data.frontpage.fi.comics);
+							$("#comics").text(data.general.fi.comics);
 							$("#software").text(data.frontpage.fi.software);
 							$("#assets").text(data.frontpage.fi.assets);
 							$("#seeallnews").text(data.frontpage.fi.seeallnews);
+							$("#contact").text(data.general.fi.contact);
 							//$(jotain).appendTo("#subtitle");
 							//$("#name").text(data.data.name);
 							localStorage.setItem("language","fi");
 						}else if (lang == "es") {
 							$("#subtitle").text(data.frontpage.es.subtitle);
 							$("#videogames").text(data.frontpage.es.videogames);
-							$("#comics").text(data.frontpage.es.comics);
+							$("#comics").text(data.general.es.comics);
 							$("#software").text(data.frontpage.es.software);
 							$("#assets").text(data.frontpage.es.assets);
 							$("#seeallnews").text(data.frontpage.es.seeallnews);
+							$("#contact").text(data.general.es.contact);
 							localStorage.setItem("language","es");
 						}
 						console.log("Language changed and saved.");

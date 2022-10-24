@@ -27,5 +27,22 @@
 		   "news": "Noticias",
 		   "seeallnews": "Ver todas las noticias"
 	   }
+   },
+   "general": {
+	   "en": {
+		   "tofrontpage": "Back to the planet",
+		   "contact": "Contact",
+		   "comics": "Comics"
+	   },
+	   "fi": {
+		   "tofrontpage": "Takaisin planeetalle",
+		   "contact": "Ota yhteyttä",
+		   "comics": "Sarjakuvat"
+	   },
+	   "es": {
+		   "tofrontpage": "De vuelta al planeta",
+		   "contact": "Contactar",
+		   "comics": "Cómics"
+	   }
    }
 }
