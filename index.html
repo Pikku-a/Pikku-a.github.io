@@ -100,14 +100,14 @@
 			
 			<!--GET TRANSLATIONS-->
 			<script>
-			$(document).ready(function() {
+			/*$(document).ready(function() {
 				$.getJSON("text/pikkuacom.json",function(data) {
 					$("#subtitle").text(data.frontpage.fi.subtitle);
 					console.log("jquery: "+JSON.stringify(data.frontpage.fi.subtitle));
 					//$(jotain).appendTo("#subtitle");
 					//$("#name").text(data.data.name);
 				})
-			});
+			});*/
 			
 			//Kokeilu ilman jquerya
 			function getElement(id) {
@@ -119,10 +119,10 @@
 			.then((res) => {
 			  const data = res.data;
 			  getElement('subtitle').innerHTML =  data.frontpage.fi.subtitle;
-			  console.log("javascript: "+(data.fi.frontpage.subtitle));
-			  getElement('symbol').innerHTML = 'Symbol: ' + data.symbol;
+			  console.log("javascript: "+(data.frontpage.fi.subtitle));
+			  /*getElement('symbol').innerHTML = 'Symbol: ' + data.symbol;
 			  getElement('rank').innerHTML = 'Rank: ' + data.rank;
-			  getElement('price').innerHTML = 'Price: ' + data.quotes.USD.price;
+			  getElement('price').innerHTML = 'Price: ' + data.quotes.USD.price;*/
 			  // do the rest here
 			});
 			</script>
