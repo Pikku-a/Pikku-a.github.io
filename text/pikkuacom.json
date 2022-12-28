@@ -12,7 +12,6 @@
 		   "videogames": "Videopelit",
 		   "software": "Ohjelmistot",
 		   "assets": "Assets for game making",
-		   "news": "Uutiset",
 		   "seeallnews": "Katso kaikki uutiset"
 	   },
 	   "es": {
@@ -20,7 +19,6 @@
 		   "videogames": "Videojuegos",
 		   "software": "Software",
 		   "assets": "Assets for game making",
-		   "news": "Noticias",
 		   "seeallnews": "Ver todas las noticias"
 	   }
    },
@@ -29,19 +27,19 @@
 		   "tofrontpage": "Back to the planet",
 		   "contact": "Contact",
 		   "comics": "Comics"
-		   "news": "News",
+		   "thenews": "News",
 	   },
 	   "fi": {
 		   "tofrontpage": "Takaisin planeetalle",
 		   "contact": "Ota yhteyttä",
 		   "comics": "Sarjakuvat"
-		   "news": "Uutiset",
+		   "thenews": "Uutiset",
 	   },
 	   "es": {
 		   "tofrontpage": "De vuelta al planeta",
 		   "contact": "Contactar",
 		   "comics": "Cómics"
-		   "news": "Noticias",
+		   "thenews": "Noticias",
 	   }
    }
 }
