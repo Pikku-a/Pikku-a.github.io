@@ -26,20 +26,20 @@
 	   "en": {
 		   "tofrontpage": "Back to the planet",
 		   "contact": "Contact",
-		   "comics": "Comics"
-		   "thenews": "News",
+		   "comics": "Comics",
+		   "thenews": "News"
 	   },
 	   "fi": {
 		   "tofrontpage": "Takaisin planeetalle",
 		   "contact": "Ota yhteyttä",
-		   "comics": "Sarjakuvat"
-		   "thenews": "Uutiset",
+		   "comics": "Sarjakuvat",
+		   "thenews": "Uutiset"
 	   },
 	   "es": {
 		   "tofrontpage": "De vuelta al planeta",
 		   "contact": "Contactar",
-		   "comics": "Cómics"
-		   "thenews": "Noticias",
+		   "comics": "Cómics",
+		   "thenews": "Noticias"
 	   }
    }
 }
