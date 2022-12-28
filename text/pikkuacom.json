@@ -5,7 +5,6 @@
 		   "videogames": "Video games",
 		   "software": "Software",
 		   "assets": "Assets for game making",
-		   "news": "News",
 		   "seeallnews": "See all news"
 	   },
 	   "fi": {
@@ -30,16 +29,19 @@
 		   "tofrontpage": "Back to the planet",
 		   "contact": "Contact",
 		   "comics": "Comics"
+		   "news": "News",
 	   },
 	   "fi": {
 		   "tofrontpage": "Takaisin planeetalle",
 		   "contact": "Ota yhteyttä",
 		   "comics": "Sarjakuvat"
+		   "news": "Uutiset",
 	   },
 	   "es": {
 		   "tofrontpage": "De vuelta al planeta",
 		   "contact": "Contactar",
 		   "comics": "Cómics"
+		   "news": "Noticias",
 	   }
    }
 }
