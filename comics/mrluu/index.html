@@ -1,0 +1,141 @@
+<<!DOCTYPE html>
+<html lang="fi">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ecd favicon.ico">
+    <title>Mr. Luu</title>
+    <meta name="description" content="Mr. Luu sarjakuva.">
+    <meta name="keywords" content="mr. luu, pikku-a, pikku a, sarjakuva, nettisarjakuva, hauska, komedia, fiktio">
+
+    <style>
+
+    a {
+      color: #fcca3f;
+    }
+	hr {
+		border-color: #1ab3d5;
+	}
+
+    .shaky {
+      -webkit-animation: shake 1s ease-in-out 0.1s infinite alternate;
+    }
+    @-webkit-keyframes shake {
+     from {
+        -webkit-transform: rotate(5deg);
+     }
+     to {
+       -webkit-transform-origin:center center;
+       -webkit-transform: rotate(-5deg);
+     }
+    }
+
+    /*Side by side images*/
+    * {
+      box-sizing: border-box;
+    }
+
+    .column {
+      display: inline-block;
+      width: 33.33%;
+      margin: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+      /* CONTENTS */
+      .contents {
+        color: black;
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        font-family: courier new;
+      }
+      /* RESPONSIVE */
+      @media screen and (max-width: 1000px) {
+        .contents {
+          width: 80%;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .contents {
+          width: 100%;
+        }
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body bgcolor="#1ab3d9">
+    <div class="contents">
+      <header>
+        <h1 class="shaky">Mr. Luu</h1><br>
+        <h2>Mr. Luu on sininen tyyppi joka joutuu moniin hienoihin seikkailuihin.</h2><br>
+      </header>
+
+    <h3>Valitse tarina lukeaksesi sen:</h3><br>
+
+    <!--EPISODES-->
+    <div class="row">
+      <!--EP1-->
+      <div class="column" style="background-color:#fcba03; width:400px;">
+      <a  href="elavat-autot.html">
+      <img border="0" alt="thumbnail" src="thumbnail1.jpg" width="400" height="160">
+      </a><br><p>Elävät Autot</p>
+      </div>
+      <!--EP2-->
+      <div class="column" style="background-color:#fcba03; width:400px;">
+      <a  href="kadonnut-rottakansa.html">
+      <img border="0" alt="thumbnail" src="thumbnail2.jpg" width="400" height="160">
+      </a><br><p>Kadonnut Rotta-kansa</p>
+      </div>
+
+    </div>
+	
+	<br><br><br><br><br>
+	<!--VISITORS
+	<SCRIPT>
+	expireDate = new Date
+	expireDate.setMonth(expireDate.getMonth()+6)
+	jcount = eval(cookieVal("mrluuviews"))
+	jcount++
+	document.cookie = "mrluuviews="+jcount+";expires=" + expireDate.toGMTString()
+
+	function cookieVal(cookieName) {
+	thisCookie = document.cookie.split("; ")
+	for (i=0; i<thisCookie.length; i++){
+	if (cookieName == thisCookie[i].split("=")[0]){
+	return thisCookie[i].split("=")[1]
+	}
+	}
+	return 0
+	}
+
+	function page_counter(){
+	for (i=0;i<(7-jcount.toString().length);i++)
+	document.write('<span class="counter">0</span>')
+	for (y=0;y<(jcount.toString().length);y++)
+	document.write('<span class="counter">'+jcount.toString().charAt(y)+'</span>')
+	}
+	</SCRIPT>
+	<p>Tätä sivua on katsottu yli</p>
+	<SCRIPT>
+		page_counter(jcount);
+	</SCRIPT>
+	<p>kertaa.</p>
+    <br><hr>--><br>
+	
+    <p>Nämä sarjakuvat ovat aika vanhoja.</p><br><br>
+    <a href="../../index.html">Go to the planet?</a><br><br>
+    <br><br>
+    <footer>© Pikku-a 2019</footer>
+    </div>
+  </body>
+</html>

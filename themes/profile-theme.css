@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+	background-image: url("../images/?");
+}
+#profilecenter {
+	margin:30vh;
+}
+#profilepic {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+}
