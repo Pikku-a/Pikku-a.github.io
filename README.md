@@ -9,3 +9,4 @@
 - Online notebook synchronization
 - More optimization
 - Rename image folder to media
+- Start using avif format for comics and maybe for some other stuff (but not games and other commercial stuff)
