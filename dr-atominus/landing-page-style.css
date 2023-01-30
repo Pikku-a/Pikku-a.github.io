@@ -38,8 +38,14 @@ iframe {
 	max-width: 100%;
 }
 
+img {
+	margin:10px;
+}
+
 a {
 	color:white;
+	display:inline-block;
+	margin-top:15px;
 }
 a:visited {
 	color:grey;
