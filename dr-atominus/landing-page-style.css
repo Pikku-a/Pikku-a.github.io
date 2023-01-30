@@ -3,7 +3,7 @@
     height:auto;
 }
 
-h2 {
+h2, h3 {
     padding: 10px;
 }
 
@@ -38,14 +38,16 @@ iframe {
 	max-width: 100%;
 }
 
-img {
+a {
+	display:inline-block;
 	margin:10px;
+	margin-bottom:40px;
 }
 
-a {
+footer a {
 	color:white;
 	display:inline-block;
-	margin-top:15px;
+	margin-bottom:20px;
 }
 a:visited {
 	color:grey;
