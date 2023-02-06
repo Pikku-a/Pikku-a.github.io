@@ -1,4 +1,3 @@
 ErrorDocument 404 /404.html
 
-# Permanent redirect:
-Redirect permanent "websites.html" "https://pikkua.com/software/"
+Redirect 301 /websites.html /software/
