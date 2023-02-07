@@ -76,7 +76,7 @@
 
 		function languageChange(lang) {
 			$(document).ready(function() {
-				$.getJSON("https.//pikkua.com/text/pikkuacom.json",function(data) {
+				$.getJSON("../text/pikkuacom.json",function(data) {
 					if (lang == "en") {
 						$("#comics").text(data.general.en.comics);
 						$("#tofrontpage").text(data.general.en.tofrontpage);
