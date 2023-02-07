@@ -1,5 +1,5 @@
 ErrorDocument 404 /404.html
 
 RewriteEngine On
-Redirect 301 /websites.html /software
-Redirect 301 /comics.html /comics
+Redirect 301 /websites.html /software/
+Redirect 301 /comics.html /comics/
