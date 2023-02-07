@@ -1,3 +1,4 @@
 ErrorDocument 404 /404.html
 
 Redirect 301 /websites.html /software/
+Redirect 301 /comics.html /comics/
