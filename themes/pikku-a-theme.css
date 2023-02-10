@@ -1,6 +1,10 @@
 body {
 	background-color: #030303;
 }
+::selection {
+	color:black;
+	background: #14c91d; /* What about yellow? */
+}
 a {
   color: white;
 }
