@@ -4,3 +4,4 @@ RewriteEngine On
 Redirect 301 /websites.html /software/
 Redirect 301 /comics.html /comics/
 Redirect 301 /videogames.html /games/
+Redirect 301 /news.html /general/news.html
