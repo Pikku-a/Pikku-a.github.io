@@ -2,9 +2,11 @@
 //© Pikku-a 2023
 function languageChange(lang /*, id1, id2, ... */) {
 	$(document).ready(function() {
-		console.log("Version 0.8");
+		console.log("Version 0.9");
 		$.getJSON("https://pikkua.com/text/pikkuacom.json",function(data) {
-			for (var i = 0; i < arguments.length+1; i++) {
+			for (var i = 0; i < arguments.length-1; i++) {
+				console.log(i);
+				console.log(arguments[i+1]);
 				let str = arguments[i+1].toString().substring(1); //Removes #
 				if (lang == "en") {
 					$(`${arguments[i+1]}`).text(data.general.en[str]); //data.general.en[arguments[i+1]]
