@@ -108,13 +108,9 @@
 			
 			<!--GET TRANSLATIONS-->
 			<script>
-			var loaded = false;
-			if (loaded == false) {
-				loaded = true;
-				var language = localStorage.getItem("language");
-				languageChange(language);
-				console.log("Language loaded.");
-			}
+			var language = localStorage.getItem("language");
+			languageChange(language);
+			console.log("Language loaded.");
 
 			function languageChange(lang) {
 				$(document).ready(function() {
