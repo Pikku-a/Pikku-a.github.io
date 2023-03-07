@@ -62,13 +62,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="../scripts/language-handling.js"></script>
 		<script>
-		var loaded = false;
-		if (loaded == false) {
-			loaded = true;
-			var language = localStorage.getItem("language");
-			languageChange(language,"#tofrontpage");
-			console.log("Language loaded.");
-		}
+		var language = localStorage.getItem("language");
+		languageChange(language,"#tofrontpage");
 		</script>
 
     </div>
