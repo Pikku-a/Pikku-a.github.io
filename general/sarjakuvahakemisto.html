@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 60%;
+  font-size: 16px;
+  padding: 12px 20px 12px 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>Sarjakuvahakemisto</h2>
+
+<input type="text" id="myInput" onkeyup="etsiNumero()" placeholder="Etsi numerolla..." title="Etsi numerolla">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">Numero</th>
+    <th style="width:10%;">Nimi</th>
+    <th style="width:10%;">Vuosi</th>
+    <th style="width:10%;">Kunto</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Mikki kiipelissä</td>
+    <td>1970 / 2010</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>75</td>
+    <td>Akun banaanipotku</td>
+    <td>1984</td>
+    <td>Huono</td>
+  </tr>
+  <tr>
+    <td>87</td>
+    <td>Mikki esiin</td>
+    <td>2001</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>118</td>
+    <td>Yli kivien ja kantojen</td>
+    <td>? / 2007</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>145</td>
+    <td>Räpylät rannalle, Aku!</td>
+    <td>1992/2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>201</td>
+    <td>Salaiset kansiot</td>
+    <td>1996</td>
+    <td>Huono</td>
+  </tr>
+  <tr>
+    <td>208</td>
+    <td>Rantaremmi</td>
+    <td>1997</td>
+    <td>Menettelee</td>
+  </tr>
+  <tr>
+    <td>227</td>
+    <td>Suksi kuuseen!</td>
+    <td>1999</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>260</td>
+    <td>Pohjakosketus</td>
+    <td>2001</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>267</td>
+    <td>Räyhä maassa</td>
+    <td>2002</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>279</td>
+    <td>Rottasota</td>
+    <td>2003</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>290</td>
+    <td>Oikotie onneen</td>
+    <td>2003</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>294</td>
+    <td>Konille kyytiä</td>
+    <td>2004</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>306</td>
+    <td>Ilmojen halki</td>
+    <td>2005</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>309</td>
+    <td>Tähtien setä</td>
+    <td>2005</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>334</td>
+    <td>Kylmää kyytiä</td>
+    <td>2007</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>339</td>
+    <td>Hetki lyö</td>
+    <td>2008</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>341</td>
+    <td>Läpimurto</td>
+    <td>2008</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>345</td>
+    <td>Tähtihetki</td>
+    <td>2008</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>351</td>
+    <td>Tuplanolla ja petosten kehä</td>
+    <td>2009</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>353</td>
+    <td>Onnenonkija</td>
+    <td>2009</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>356</td>
+    <td>Operaatio lepo</td>
+    <td>2009</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>362</td>
+    <td>Haluatko triljonääriksi?</td>
+    <td>2010</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>368</td>
+    <td>Kuutamolla</td>
+    <td>2010</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>369</td>
+    <td>Tripla</td>
+    <td>2010</td>
+    <td>Huono</td>
+  </tr>
+  <tr>
+    <td>371</td>
+    <td>Kaikki likoon</td>
+    <td>2010</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>374</td>
+    <td>Valiojoukko</td>
+    <td>2011</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>377</td>
+    <td>Seitsemän meren kauhu</td>
+    <td>2011</td>
+    <td>Ok</td>
+  </tr>
+  <tr>
+    <td>384</td>
+    <td>Rahat mielessä</td>
+    <td>2011</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>385</td>
+    <td>Hyvä tuli!</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>386</td>
+    <td>Tuplanolla ja pelin säännöt</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>387</td>
+    <td>Taidenautinto</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>390</td>
+    <td>Outo lintu</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>394</td>
+    <td>Kansikuvapoika</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>396</td>
+    <td>Jäljillä</td>
+    <td>2012</td>
+    <td>Hyvä</td>
+  </tr>
+  <tr>
+    <td>397</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>398</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>399</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>401</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>402</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>403</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>404</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>405</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<script>
+function etsiNumero() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
