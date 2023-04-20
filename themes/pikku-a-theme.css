@@ -88,6 +88,11 @@ h3 {
 	margin: 0 auto;
 	font-family: courier new;
 }
+/*SECRET TEXT*/
+#secret {
+	display: none;
+	white-space: pre-line;
+}
 
 /* RESPONSIVE */
 @media screen and (max-width: 700px) {
@@ -99,10 +104,4 @@ h3 {
 	.contents {
 	width: 100%;
 	}
-}
-
-/*SECRET TEXT*/
-#secret {
-	display: none;
-	white-space: pre-line;
 }
