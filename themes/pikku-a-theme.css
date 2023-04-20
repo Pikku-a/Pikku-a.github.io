@@ -101,19 +101,8 @@ h3 {
 	}
 }
 
-/* INFO BOX
-#infobox {
-display: none;
+/*SECRET TEXT*/
+#secret {
+	display: none;
+	white-space: pre-line;
 }
-.shaky {
--webkit-animation: shake 1s ease-in-out 0.1s infinite alternate;
-}
-@-webkit-keyframes shake {
-from {
-  -webkit-transform: rotate(5deg);
-}
-to {
- -webkit-transform-origin:center center;
- -webkit-transform: rotate(-5deg);
-}
-}*/
