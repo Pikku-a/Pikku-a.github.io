@@ -1,12 +1,61 @@
 body {
 	text-align: center;
-	background-image: url("../images/?");
+	font-family: courier new;
+	padding-bottom: 40px;
+	background-image: url("../images/general/wallpaper-coding-rain3.jpg");
+	background-repeat:no-repeat;
+	/*background-color:#f4f4f4;*/
 }
 #profilecenter {
 	margin:30vh;
+	color:white;
 }
 #profilepic {
     border-radius: 50%;
     width: 100px;
     height: auto;
+}
+#stats {
+	margin-left:250px;
+	margin-top:400px;
+	text-align:left;
+	color:black;
+}
+progress {
+	width:80%;
+}
+a {
+	/*color: #1f5123;*/
+	color:#4eed5b;
+	display:inline-block;
+	padding-bottom:10px;
+}
+a:visited {
+	/*color:#387c3d;*/
+	color:#51bc5a;
+}
+
+@media screen and (max-width: 1200px) {
+	#stats {
+		margin-left:200px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	#stats {
+		margin-left:30px;
+		margin-top:500px;
+	}
+	#profilecenter {
+		margin:20vh;
+	}
+}
+@media screen and (max-width:600px) {
+	p {
+		width:90%;
+	}
+	#profilecenter {
+		margin:20px;
+		margin-top:50px;
+		width:95%;
+	}
 }
