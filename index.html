@@ -112,25 +112,18 @@
 			<!--GET TRANSLATIONS-->
 			<script>
 			var language = localStorage.getItem("language");
+			console.log("language1 "+language);
+			if (language == null) {
+				language = navigator.language || navigator.userLanguage;
+			}
+			console.log("language2 "+language);
 			languageChange(language);
 			console.log("Language loaded.");
 
 			function languageChange(lang) {
 				$(document).ready(function() {
 					$.getJSON("text/pikkuacom.json",function(data) {
-						if (lang == "en") {
-							$("#subtitle").text(data.frontpage.en.subtitle);
-							$("#videogames").text(data.frontpage.en.videogames);
-							$("#comics").text(data.general.en.comics);
-							$("#software").text(data.frontpage.en.software);
-							$("#assets").text(data.frontpage.en.assets);
-							$("#thenews").text(data.general.en.thenews);
-							$("#seeallnews").text(data.frontpage.en.seeallnews);
-							$("#contact").text(data.general.en.contact);
-							$("#secret").text(data.general.en.secret);
-							document.getElementById("selectlanguage").options[0].selected = true;
-							localStorage.setItem("language","en");
-						}else if (lang == "fi") {
+						if (lang == "fi") {
 							$("#subtitle").text(data.frontpage.fi.subtitle);
 							$("#videogames").text(data.frontpage.fi.videogames);
 							$("#comics").text(data.general.fi.comics);
@@ -155,6 +148,18 @@
 							$("#contact").text(data.general.es.contact);
 							document.getElementById("selectlanguage").options[2].selected = true;
 							localStorage.setItem("language","es");
+						}else /*if (lang == "en") */{
+							$("#subtitle").text(data.frontpage.en.subtitle);
+							$("#videogames").text(data.frontpage.en.videogames);
+							$("#comics").text(data.general.en.comics);
+							$("#software").text(data.frontpage.en.software);
+							$("#assets").text(data.frontpage.en.assets);
+							$("#thenews").text(data.general.en.thenews);
+							$("#seeallnews").text(data.frontpage.en.seeallnews);
+							$("#contact").text(data.general.en.contact);
+							$("#secret").text(data.general.en.secret);
+							document.getElementById("selectlanguage").options[0].selected = true;
+							localStorage.setItem("language","en");
 						}
 						console.log("Language changed and saved.");
 					})
