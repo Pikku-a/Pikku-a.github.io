@@ -1,23 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../../images/planet%20favicon.gif" type="image/gif">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dialogue engine for GameMaker manual</title>
-    <meta name="description" content="Dialogue engine for GameMaker manual">
-    <meta name="keywords" content="pikku-a, pikku a, pikku-a games, dialogue engine, dialogue system, dialog engine, dialog system">
-    <link rel="stylesheet" type="text/css" href="themes/pikku-a-theme.css">
-  </head>
-  
-  <body>
-<p>DIALOGUE ENGINE MANUAL<br /><br />------------------------------------------<br />CONTENTS<br />- Introduction<br />- Scripts<br />&nbsp;&nbsp; &nbsp;- Basic scripts<br />&nbsp;&nbsp; &nbsp;- Settings scripts<br />&nbsp;&nbsp; &nbsp;- Styling scripts<br />&nbsp;&nbsp; &nbsp;- Options scripts<br />&nbsp;&nbsp; &nbsp;- Other scripts<br />- Changing default settings<br />- Using Draw GUI<br />- Using Dialogue engine with Cutscene engine<br />- Smart line break configuration<br />- Tutorials<br />- Report a bug<br />- Other things<br />------------------------------------------<br /><br />INTRODUCTION<br /><br />Thank you for getting my Dialogue engine! This manual will help you get started.<br /><br />The fastest way to get started is probably checking the example objects to see how this engine can be used.<br />Also, at the end of every script there is a little example of how to use it.<br /><br />If you want to ask anything or suggest a feature, see the "Contact me" part at the bottom of this manual.<br /><br />------------------------------------------<br /><br />SCRIPTS<br /><br />&nbsp;&nbsp; &nbsp;BASIC SCRIPTS<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_create()<br />&nbsp;&nbsp; &nbsp;With this script you can create the dialogue.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;------------------------<br />&nbsp;&nbsp; &nbsp;SETTINGS SCRIPTS<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set()<br />&nbsp;&nbsp; &nbsp;With this you can set the style and some settings of the textbox.<br /><br />&nbsp;&nbsp; &nbsp;textbox_set_bubble()<br />&nbsp;&nbsp; &nbsp;If you call this instead of textbox_set(), you can make the textbox a speech bubble.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_speed()<br />&nbsp;&nbsp; &nbsp;With this you can set the speed of the dialogue. The default speed is 0.5.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_key()<br />&nbsp;&nbsp; &nbsp;With this you can choose the keyboard keys used for the dialogue.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_sound()<br />&nbsp;&nbsp; &nbsp;Choose the sound for the dialogue.<br />&nbsp;&nbsp; &nbsp;It could be, for example, a typewriter sound.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_add_voice()<br />&nbsp;&nbsp; &nbsp;With this you can add voice acting to the dialogue.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;------------------------<br />&nbsp;&nbsp; &nbsp;STYLING SCRIPTS<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_sprite()<br />&nbsp;&nbsp; &nbsp;With this function you can add your own sprite for the textbox and name box, instead of colored rectangles.<br />&nbsp;&nbsp; &nbsp;(The sprite size should be a multiple of 3, for example, 12 or 24).<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_portrait()<br />&nbsp;&nbsp; &nbsp;With this you can set a different character portrait sprite to every message in the dialogue.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_set_position()<br />&nbsp;&nbsp; &nbsp;Set the position of everything.<br />&nbsp;&nbsp; &nbsp;The textbox automatically fits the view, but if you don't like how it goes, you can change it with this.<br />&nbsp;&nbsp; &nbsp;It's not necessary to change everything. If you change only some things, the others should automatically go to correct positions.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;------------------------<br />&nbsp;&nbsp; &nbsp;OPTIONS SCRIPTS<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_add_options()<br />&nbsp;&nbsp; &nbsp;Add up to 3 options.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_change_message_according_option()<br />&nbsp;&nbsp; &nbsp;Change one message depending on what option the player chooses.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_change_var_at_end()<br />&nbsp;&nbsp; &nbsp;Change a variable when the dialogue ends.<br />&nbsp;&nbsp; &nbsp;You could use this, for example, to know if the player has spoken to a npc or not.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;chooses_option()<br />&nbsp;&nbsp; &nbsp;Checks what option the player chooses. You can use it to change something (for example a variable).<br />&nbsp;&nbsp; &nbsp;For an example, see the object: example_npc3.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;OTHER SCRIPTS<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_exists()<br />&nbsp;&nbsp; &nbsp;Checks if the textbox exists.<br />&nbsp;&nbsp; &nbsp;Call it before using textbox_create(). For example:<br />&nbsp;&nbsp; &nbsp;if !textbox_exists() {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;textbox_create("Hello.");<br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_hide() and textbox_is_visible()<br />&nbsp;&nbsp; &nbsp;textbox_is_visible() checks if the textbox is visible or not and textbox_hide() can be used to hide or show the textbox.<br />&nbsp;&nbsp; &nbsp;For example:<br />&nbsp;&nbsp; &nbsp;if textbox_exists() {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if keyboard_check_pressed(vk_escape) {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if textbox_is_visible() {<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;textbox_hide(true);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}else{<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;textbox_hide(false);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;textbox_show_backlog() &amp;&amp; textbox_backlog_visible()<br />&nbsp;&nbsp; &nbsp;textbox_backlog_visible() checks if the backlog is visible or not.<br />&nbsp;&nbsp; &nbsp;textbox_show_backlog() shows or hides the backlog.<br />&nbsp;&nbsp; &nbsp;<br />---------------------------------<br /><br />CHANGING DEFAULT SETTINGS<br />If you don't want to call the script textbox_set() or textbox_set_sprite() etc. everytime, you can change<br />the default settings in the textbox_create() script. If you go to that script, you will find a "SETTINGS AREA"<br />where you can change variables.<br />---------------------------------<br /><br />USING DRAW GUI<br />Using Draw GUI with this Dialogue engine hasn't been tested a lot yet, so<br />I recommend using the normal Draw event. But if you want to use it, follow these instructions:<br />1. Go to the textbox object.<br />2. Change the Draw event to Draw GUI.<br />3. Change the draw_gui variable there to true.<br /><br />Things to note:<br />Remember that using textbox_set_position is of course different when using Draw GUI.<br />When using Draw GUI, your camera size and viewport size should be the same, otherwise clicking options with mouse will not work well.<br />---------------------------------<br /><br />USING DIALOGUE ENGINE WITH CUTSCENE ENGINE<br />I have also made a cutscene engine (https://marketplace.yoyogames.com/assets/8241/cutscene-engine).<br />It uses some of the same scripts and objects as the dialogue engine. When importing these scripts and objects, you can replace the duplicates.<br />---------------------------------<br /><br />SMART LINE BREAK CONFIGURATION<br />Recently I added a new optional argument to textbox_set: smart line breaks.<br />This prevents text from changing line in the middle of a word. However, this is still an experimental<br />feature and doesn't work correctly on all projects (also, it doesn't seem to work when using Draw GUI in the textbox object).<br />If you want to use this feature in your project but it doesn't work correctly, you can try this:<br />Go to textbox_draw script. Change the variable called linebreak_addition to something else<br />(for example: 0, -5 or -10). It's completely possible that this doesn't fix it and you will not be able<br />to use this feature. However, I tried to use this feature in 4 different projects and in 3 of them changing<br />this variable helped (on 1 project it didn't work at all).<br />---------------------------------<br /><br />TUTORIALS<br />There are some (currently only one...) simple tutorials on <a href="https://www.youtube.com/channel/UCzKIFNtRA1A2r3cJB8alHYw">my Youtube channel.</a><br />If you already know how to use this, feel free to make your own tutorials.<br />---------------------------------<br /><br />REPORT A BUG<br />If you find a bug, please report it in the <a href="https://itch.io/t/2403703/bug-reports">discussion boards on itchio.</a><br />You can also email me. See the "Contact me" section below.<br />---------------------------------<br /><br />OTHER THINGS<br />You can ignore the textbox object. It manages itself. You can also ignore the internal scipts.<br /><br />-Showcasing your games-<br />Have you made a game using this Dialogue engine?<br />If so, you can email me a link to the game and I might showcase it on my website or in the marketplace.<br /><br />-Becoming a tester-<br />Would you like to try new features earlier? Email me to become a tester for Dialogue engine<br />(and Cutscene engine too if you own it). You will also get one of my games for free every time you have<br />tested an update, when the update is published.<br /><br />-Contact me-<br /><a href="https://pikku-a.itch.io/dialogue-engine/community">Discussion board on itchio.</a><br /> For email, see contact page (link below).</p>
+<!--generated on 2024-05-13T11:10:18.057Z using html.earth.-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="">
+<link rel="canonical" href="/">
+<!-- open graph -->
+<meta property="og:site_name" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/">
+<meta property="og:image" content="">
+<!-- twitter -->
+<meta property="twitter:card" content="summary">
+<meta property="twitter:url" content="/">
+<meta property="twitter:title" content="">
+<meta property="twitter:description" content="">
+<meta property="twitter:image" content="">
+<meta property="article:published_time" content="">
+<meta property="article:modified_time" content="">
+<!-- icon -->
+<link rel="shortcut icon" type="image/png" sizes="192x192"  href="">
+<!-- micro data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"article","mainEntityOfPage":{"@type":"WebPage","@id":"/"},"headline":"","image":{"@type":"ImageObject","url":""},"datePublished":"","dateModified":"","author":{"@type":"Person","name":""},"publisher":{"@type":"Organization","name":""},"description":""}</script>
+<style>address,blockquote cite,blockquote>footer{font-style:normal}pre{background:#222;color:greenyellow;}input:not([type=checkbox]):not([type=radio]),pre>code,select{display:block}:root{--fg-dark:#fafafc;--fg-light:#1d1d1f;--bg-dark:#1d1d1f;--bg-light:#fafafc;--a-dark:wheat;--a-light:#1a0dab;--font-stack:sans-serif,system-ui}@media (prefers-color-scheme:light){body{color:var(--fg-light);background:var(--bg-light)}a{color:var(--a-light)}}@media (prefers-color-scheme:dark){body{color:var(--fg-dark);background:var(--bg-dark)}a{color:var(--a-dark)}}body{font-family:var(--font-stack);line-height:1.5;max-width:600px;margin: 40px auto;padding:0 10px;text-rendering:optimizeLegibility}button,input,textarea{transition:background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s}h1{font-size:2em;line-height:1.3;margin-top:0}h1,h2,h3,h4,h5,h6{margin-bottom:12px}b,h1,h2,h3,h4,h5,h6,strong,th{font-weight:600}blockquote{border-left:4px solid;margin:1em 0;padding:0 1em}blockquote>footer{margin-top:10px}a[href^=mailto]::before{content:'📧 '}a[href^=tel]::before{content:'📞 '}a[href^=sms]::before{content:' '}button,input[type=button],input[type=checkbox],input[type=submit]{cursor:pointer}button,input,select,textarea{color:#fff;background-color:#161f27;font-family:inherit;font-size:inherit;margin-right:6px;margin-bottom:6px;padding:10px;border:none;border-radius:6px;outline:0}button,input:not([type=checkbox]):not([type=radio]),select,textarea{-webkit-appearance:none}textarea{margin-right:0;width:100%;box-sizing:border-box;resize:vertical}button,input[type=button],input[type=submit]{padding-right:30px;padding-left:30px}button:hover,input[type=button]:hover,input[type=submit]:hover{background:#324759}button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px #0096bfab}button:active,input[type=button]:active,input[type=checkbox]:active,input[type=radio]:active,input[type=submit]:active{transform:translateY(2px)}button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed;opacity:.5}::-webkit-input-placeholder{color:#a9a9a9}:-ms-input-placeholder{color:#a9a9a9}::-ms-input-placeholder{color:#a9a9a9}::placeholder{color:#a9a9a9}a{text-decoration:none}a:hover{text-decoration:underline}pre>code{padding:10px;overflow-x:auto}img{max-width:100%}hr{border:none;border-top:1px solid #dbdbdb}table{border-collapse:collapse;margin-bottom:10px;width:100%}td,th{padding:6px;text-align:left}th{border-bottom:1px solid #dbdbdb}tbody tr:nth-child(2n){background-color:#161f27}::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#161f27;border-radius:6px}::-webkit-scrollbar-thumb{background:#324759;border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#415c73}nav{margin:1rem auto}</style>
+</head>
+<body>
+<article>
+<h1 id="dialogue-engine-manual">DIALOGUE ENGINE MANUAL</h1>
+<hr>
+<h2 id="contents">CONTENTS</h2>
+<ul>
+<li>Introduction</li>
+<li>Scripts<ul>
+<li>Basic scripts</li>
+<li>Settings scripts</li>
+<li>Styling scripts</li>
+<li>Options scripts</li>
+<li>Other scripts</li>
+</ul>
+</li>
+<li>Variables</li>
+<li>Changing default settings</li>
+<li>Using Draw GUI</li>
+<li>Using Dialogue engine with Cutscene engine</li>
+<li>Smart line break configuration</li>
+<li>Tutorials</li>
+<li>Report a bug</li>
+<li>Other things</li>
+</ul>
+<hr>
+<h2 id="introduction">INTRODUCTION</h2>
+<p>Thank you for getting my Dialogue engine! This manual will help you get started.</p>
+<p>The fastest way to get started is probably checking the example objects to see how this engine can be used.
+Also, at the end of every script there is a little example of how to use it.</p>
+<p>If you want to ask anything or suggest a feature, see the &quot;Contact me&quot; part at the bottom of this manual.</p>
+<hr>
+<h2 id="scripts">SCRIPTS</h2>
+<h3 id="basic-scripts">BASIC SCRIPTS</h3>
+<p>textbox_create()
+With this script you can create the dialogue.</p>
+<hr>
+<h3 id="settings-scripts">SETTINGS SCRIPTS</h3>
+<p>textbox_set()
+With this you can set the style and some settings of the textbox.</p>
+<p>textbox_set_bubble()
+If you call this instead of textbox_set(), you can make the textbox a speech bubble.</p>
+<p>textbox_set_speed()
+With this you can set the speed of the dialogue. The default speed is 0.5.</p>
+<p>textbox_set_key()
+With this you can choose the keyboard and controller keys used for the dialogue.
+Controller will be enabled if you set the controller arguments. You must handle the connecting part yourself.</p>
+<p>textbox_set_sound()
+Choose the sound for the dialogue.
+It could be, for example, a typewriter sound.</p>
+<p>textbox_add_voice()
+With this you can add voice acting to the dialogue.</p>
+<hr>
+<h3 id="styling-scripts">STYLING SCRIPTS</h3>
+<p>textbox_set_sprite()
+With this function you can add your own sprite for the textbox and name box, instead of colored rectangles.
+(The sprite size should be a multiple of 3, for example, 12 or 24).</p>
+<p>textbox_set_portrait()
+With this you can set a different character portrait sprite to every message in the dialogue.</p>
+<p>textbox_set_position()
+Set the position of everything.
+The textbox automatically fits the view, but if you don&#39;t like how it goes, you can change it with this.
+It&#39;s not necessary to change everything. If you change only some things, the others should automatically go to correct positions.</p>
+<hr>
+<h3 id="options-scripts">OPTIONS SCRIPTS</h3>
+<p>textbox_add_options()
+Add up to 3 options.</p>
+<p>textbox_change_message_according_option()
+Change one message depending on what option the player chooses.</p>
+<p>textbox_change_var_at_end()
+Change a variable when the dialogue ends.
+You could use this, for example, to know if the player has spoken to a npc or not.</p>
+<p>chooses_option()
+Checks what option the player chooses. You can use it to change something (for example a variable).
+For an example, see the object: example_npc3.</p>
+<h3 id="other-scripts">OTHER SCRIPTS</h3>
+<p>textbox_exists()
+Checks if the textbox exists.
+Call it before using textbox_create(). For example:
+if !textbox_exists() {
+    textbox_create(&quot;Hello.&quot;);
+}</p>
+<p>textbox_hide() and textbox_is_visible()
+textbox_is_visible() checks if the textbox is visible or not and textbox_hide() can be used to hide or show the textbox.
+For example:
+if textbox_exists() {
+    if keyboard_check_pressed(vk_escape) {
+        if textbox_is_visible() {
+            textbox_hide(true);
+        }else{
+            textbox_hide(false);
+        }
+    }
+}</p>
+<p>textbox_show_backlog() &amp;&amp; textbox_backlog_visible()
+textbox_backlog_visible() checks if the backlog is visible or not.
+textbox_show_backlog() shows or hides the backlog.</p>
+<hr>
+<h2 id="variables">VARIABLES</h2>
+<p>You can also change textbox variables directly, without using the scripts.
+This is useful if there is no script for something yet,
+or if you want to do something that the scripts don&#39;t do.</p>
+<p>AUTO MODE (auto_mode)
+To make the dialogue advance automatically (without the player pressing anything), set this variable to true.
+After calling textbox_create:
+textbox.auto_mode = true;</p>
+<h2 id="there-are-more-variables-too-but-i-will-add-them-here-later">There are more variables too, but I will add them here later.</h2>
+<h2 id="changing-default-settings">CHANGING DEFAULT SETTINGS</h2>
+<p>If you don&#39;t want to call the script textbox_set() or textbox_set_sprite() etc. everytime, you can change
+the default settings in the textbox_create() script. If you go to that script, you will find a &quot;SETTINGS AREA&quot;
+where you can change variables.</p>
+<hr>
+<h2 id="using-draw-gui">USING DRAW GUI</h2>
+<p>Using Draw GUI with this Dialogue engine hasn&#39;t been tested a lot yet, so
+I recommend using the normal Draw event. But if you want to use it, follow these instructions:</p>
+<ol>
+<li>Go to the textbox object.</li>
+<li>Change the Draw event to Draw GUI.</li>
+<li>Change the draw_gui variable there to true.</li>
+</ol>
+<p>Things to note:
+Remember that using textbox_set_position is of course different when using Draw GUI.
+When using Draw GUI, your camera size and viewport size should be the same, otherwise clicking options with mouse will not work well.</p>
+<hr>
+<h2 id="using-dialogue-engine-with-cutscene-engine">USING DIALOGUE ENGINE WITH CUTSCENE ENGINE</h2>
+<p>I have also made a cutscene engine (<a href="https://marketplace.yoyogames.com/assets/8241/cutscene-engine">https://marketplace.yoyogames.com/assets/8241/cutscene-engine</a>) or (<a href="https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2">https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2</a>).
+It uses some of the same scripts and objects as the dialogue engine. When importing these scripts and objects, you can replace the duplicates.</p>
+<hr>
+<h2 id="smart-line-break-configuration">SMART LINE BREAK CONFIGURATION</h2>
+<p>Recently I added a new optional argument to textbox_set: smart line breaks.
+This prevents text from changing line in the middle of a word. However, this is still an experimental
+feature and doesn&#39;t work correctly on all projects (also, it doesn&#39;t seem to work when using Draw GUI in the textbox object).
+If you want to use this feature in your project but it doesn&#39;t work correctly, you can try this:
+Go to textbox_draw script. Change the variable called _linebreak_addition to something else
+(for example: 0, -5 or -10). It&#39;s completely possible that this doesn&#39;t fix it and you will not be able
+to use this feature. However, I tried to use this feature in 4 different projects and in 3 of them changing
+this variable helped (on 1 project it didn&#39;t work at all).</p>
+<hr>
+<h2 id="tutorials">TUTORIALS</h2>
+<p>There are some (currently only one...) simple tutorials on my Youtube channel: <a href="https://www.youtube.com/@pikku-a">https://www.youtube.com/@pikku-a</a>
+If you already know how to use this, feel free to make your own tutorials.</p>
+<hr>
+<h2 id="report-a-bug">REPORT A BUG</h2>
+<p>If you find a bug, please report it in the discussion boards on itchio: <a href="https://itch.io/t/2403703/bug-reports">https://itch.io/t/2403703/bug-reports</a>
+You can also email me. See the &quot;Contact me&quot; section below.</p>
+<hr>
+<h2 id="other-things">OTHER THINGS</h2>
+<p>You can ignore the textbox object. It manages itself. You can also ignore the internal scipts.</p>
+<p>-Showcasing your games-<br>
+Have you made a game using this Dialogue engine?
+If so, you can email me a link to the game and I might showcase it on my website or in the marketplace.</p>
+<p>-Beta test version-<br>
+Since version 2.8.0 there is a beta test version on itchio. (<a href="https://pikku-a.itch.io/dialogue-engine">https://pikku-a.itch.io/dialogue-engine</a>)
+You can use it if you want to use new features earlier or if you want to help in testing.</p>
+<p>-Contact me-<br>
+Discussion board on itchio: <a href="https://pikku-a.itch.io/dialogue-engine/community">https://pikku-a.itch.io/dialogue-engine/community</a>
 
-      <footer>
-	  <a href="../../profile/contact.html">Contact</a>
-	  |
-	  <a href="../../">Back to front page</a>
-      | © Pikku-a 2022
-      </footer>
-  </body>
+You can find my contact email on my website.
+
+<footer><a href="https://pikkua.com">VISIT MY HOMEPAGE</a></footer>
+</article>
+</body>
 </html>
