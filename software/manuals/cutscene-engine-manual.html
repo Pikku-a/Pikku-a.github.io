@@ -1,24 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../../images/planet%20favicon.gif" type="image/gif">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cutscene engine for GameMaker manual</title>
-    <meta name="description" content="Cutscene engine for GameMaker manual">
-    <meta name="keywords" content="pikku-a, pikku a, pikku-a games, cutscene engine, cutscene system">
-    <link rel="stylesheet" type="text/css" href="themes/pikku-a-theme.css">
-  </head>
-	
-	<body>
-
-<p>CUTSCENE ENGINE MANUAL<br /><br />Welcome to use Cutscene engine!<br />---------------------------------------------------<br />CONTENTS<br />- Get started<br />- Simple step-by-step guide<br />- "Internal" scripts<br />- Dialogue<br />&nbsp;&nbsp; &nbsp;- Changing default settings of dialogue<br />&nbsp;&nbsp; &nbsp;- Smart line break configuration<br />&nbsp;&nbsp; &nbsp;- Using Draw GUI for dialogue<br />&nbsp;&nbsp; &nbsp;- Using Cutscene engine with Dialogue engine<br />- Custom scripts<br />- About unfinished scripts<br />- Updating the asset<br />- Tutorials<br />- Contact<br />- Other<br />&nbsp;&nbsp; &nbsp;- Showcasing your games<br />&nbsp;&nbsp; &nbsp;- Becoming a tester<br />---------------------------------------------------<br />&nbsp;&nbsp; &nbsp;<br />GET STARTED<br />To get started take a look to the example rooms.<br /><br />Go to the creation code of the control_cutscene objects (double-click the object -&gt; creation code).<br />There you can see examples of how to use it.<br />You may want to try modifying that code, changing some scripts or arguments and then running the game.<br /><br />Then you may want to know how to use the scripts. There are more than 30! So how to use them?<br />In each script there is an explanation about what it does. There you can also see what arguments it needs.<br />---------------------------------------------------<br /><br />SIMPLE STEP-BY-STEP GUIDE<br />1. Add a control_cutscene object to the room<br />2. Make sure there is a layer called "hud" in the room<br />3. Double-click the control_cutscene object in the room<br />4. Open the creation code<br />5. Set these variables:<br />&nbsp;&nbsp; &nbsp;- cutscene_id (different for all cutscenes in the same room)<br />&nbsp;&nbsp; &nbsp;- cutscene_player (if cutscene_mode is collision, the collision is checked for this object) <br />&nbsp;&nbsp; &nbsp;- cutscene_mode ("collision" or "immediate")<br />&nbsp;&nbsp; &nbsp;- persist (true or false)<br />6. Set the 2d array "scene_info" with all the scripts that constitute the cutscene<br />7. Here is an example (more are in the example room):<br />&nbsp;&nbsp; &nbsp;cutscene_id = 0;<br />&nbsp;&nbsp; &nbsp;cutscene_player = example_player;<br />&nbsp;&nbsp; &nbsp;cutscene_mode = "collision";<br />&nbsp;&nbsp; &nbsp;persist = false;<br /><br />&nbsp;&nbsp; &nbsp;scene_info = [<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;[cutscene_play_sound,sound_alarm,1],<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;[cutscene_wait,1],<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;[cutscene_move_object,example_player,170,300,2],<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;[cutscene_dialogue_style,noone,c_black,c_white,c_white,1,example_font,noone,true,example_continue1],<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;[cutscene_dialogue,"What was that?"]<br />&nbsp;&nbsp; &nbsp;];<br />In this example, the cutscene starts when example_player collides with control_cutscene. The cutscene plays a sound, waits for a second, moves an object and shows dialogue.<br />---------------------------------------------------<br /><br />"INTERNAL" SCRIPTS<br />Ignore them. They take care of themselves.<br />---------------------------------------------------<br /><br />DIALOGUE<br />Cutscene engine has lots of scripts to show text and dialogue. The script names start with "cutscene_dialogue_".<br /><br />&nbsp;&nbsp; &nbsp;CHANGING DEFAULT SETTINGS OF DIALOGUE<br />&nbsp;&nbsp; &nbsp;If you don't want to call the script cutscene_dialogue_style, cutscene_dialogue_keys, cutscene_dialogue_sprite etc.<br />&nbsp;&nbsp; &nbsp;everytime you add dialogue, you can change the default settings in the control_cutscene object.<br />&nbsp;&nbsp; &nbsp;If you go to the create event of that object, you will find a "SETTINGS AREA" where you can change variables.<br /><br />&nbsp;&nbsp; &nbsp;SMART LINE BREAK CONFIGURATION<br />&nbsp;&nbsp; &nbsp;Recently I added a new optional argument to cutscene_dialogue_style: smart line breaks.<br />&nbsp;&nbsp; &nbsp;This prevents text from changing line in the middle of a word. However, this is still an experimental<br />&nbsp;&nbsp; &nbsp;feature and doesn't work correctly on all projects. If you want to use this feature in your project but<br />&nbsp;&nbsp; &nbsp;it doesn't work correctly, you can try this:<br />&nbsp;&nbsp; &nbsp;Go to textbox_draw script. Change the variable called linebreak_addition to something else<br />&nbsp;&nbsp; &nbsp;(for example: 0, -5 or -10). It's completely possible that this doesn't fix it and you will not be able<br />&nbsp;&nbsp; &nbsp;to use this feature. However, I tried to use this feature in 4 different projects and in 3 of them changing<br />&nbsp;&nbsp; &nbsp;this variable helped (on 1 project it didn't work at all).<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;USING DRAW GUI<br />&nbsp;&nbsp; &nbsp;Using Draw GUI to draw the dialogue hasn't been tested a lot yet, so I recommend using the normal Draw event.<br />&nbsp;&nbsp; &nbsp;But if you want to use it, follow these instructions:<br />&nbsp;&nbsp; &nbsp;1. Go to the textbox object.<br />&nbsp;&nbsp; &nbsp;2. Change the Draw event to Draw GUI.<br />&nbsp;&nbsp; &nbsp;3. Change the draw_gui variable there to true.<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;Things to note:<br />&nbsp;&nbsp; &nbsp;Remember that using cutscene_dialogue_position is of course different when using Draw GUI.<br />&nbsp;&nbsp; &nbsp;When using Draw GUI, your camera size and viewport size should be the same, otherwise clicking options with mouse will not work well.<br /><br />&nbsp;&nbsp; &nbsp;USING CUTSCENE ENGINE WITH DIALOGUE ENGINE<br />&nbsp;&nbsp; &nbsp;I also have a Dialogue engine (https://marketplace.yoyogames.com/assets/6657/dialogue-engine-text-boxes).<br />&nbsp;&nbsp; &nbsp;If you are using both engines together, you will notice that some objects and scripts have the same name.<br />&nbsp;&nbsp; &nbsp;You can delete the duplicates.<br />---------------------------------------------------<br /><br />CUSTOM SCRIPTS<br />You can make your own scripts too. When the thing the script is supposed to do is done, call cutscene_next().<br />See the other scripts for examples.<br />---------------------------------------------------<br /><br />ABOUT UNFINISHED SCRIPTS<br />Some scripts might not work correctly yet, for example cutscene_skip.<br />These will be fixed / updated in the future.<br />---------------------------------------------------<br /><br />UPDATING THE ASSET<br />NOTE! If you update the asset from your asset library, if the control_cutscene object gets updated,<br />Gamemaker will probably remove it from all rooms, and your cutscenes might get removed too.<br />So if you for some reason want to update it, I recommend doing a backup first.<br />---------------------------------------------------<br /><br />TUTORIALS<br />There are some simple tutorials (only one currently...) for this engine on my Youtube channel: https://www.youtube.com/channel/UCzKIFNtRA1A2r3cJB8alHYw<br />---------------------------------------------------<br /><br />CONTACT<br />If you need more help or want to suggest a feature, you can email me. See link to contact page below.<br />---------------------------------------------------<br /><br />OTHER<br />This engine will improve over time and more features will be added.<br /><br />&nbsp;&nbsp; &nbsp;SHOWCASING YOUR GAMES<br />&nbsp;&nbsp; &nbsp;Have you made a game using this Cutscene engine?<br />&nbsp;&nbsp; &nbsp;If so, you can email me a link to the game and I might showcase it on my website or in the marketplace.<br /><br />&nbsp;&nbsp; &nbsp;BECOMING A TESTER<br />&nbsp;&nbsp; &nbsp;Would you like to try new features earlier? Email me to become a tester for Cutscene engine<br />&nbsp;&nbsp; &nbsp;(and Dialogue engine too if you own it). You will also get one of my games for free every time you have<br />&nbsp;&nbsp; &nbsp;tested an update, when the update is published.</p>
-
-      <footer>
-	  <a href="../../profile/contact.html">Contact</a>
-	  |
-	  <a href="../../">Back to front page</a>
-      | © Pikku-a 2022
-      </footer>
-  </body>
+<!--generated on 2024-05-13T11:30:36.156Z using html.earth.-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<meta name="description" content="">
+<link rel="canonical" href="/">
+<!-- open graph -->
+<meta property="og:site_name" content="">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/">
+<meta property="og:image" content="">
+<!-- icon -->
+<link rel="shortcut icon" type="image/png" sizes="192x192"  href="">
+<!-- micro data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"article","mainEntityOfPage":{"@type":"WebPage","@id":"/"},"headline":"","image":{"@type":"ImageObject","url":""},"datePublished":"","dateModified":"","author":{"@type":"Person","name":""},"publisher":{"@type":"Organization","name":""},"description":""}</script>
+<style>address,blockquote cite,blockquote>footer{font-style:normal}pre{background:#222;color:greenyellow;}input:not([type=checkbox]):not([type=radio]),pre>code,select{display:block}:root{--fg-dark:#fafafc;--fg-light:#1d1d1f;--bg-dark:#1d1d1f;--bg-light:#fafafc;--a-dark:wheat;--a-light:#1a0dab;--font-stack:sans-serif,system-ui}@media (prefers-color-scheme:light){body{color:var(--fg-light);background:var(--bg-light)}a{color:var(--a-light)}}@media (prefers-color-scheme:dark){body{color:var(--fg-dark);background:var(--bg-dark)}a{color:var(--a-dark)}}body{font-family:var(--font-stack);line-height:1.5;max-width:600px;margin: 40px auto;padding:0 10px;text-rendering:optimizeLegibility}button,input,textarea{transition:background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s}h1{font-size:2em;line-height:1.3;margin-top:0}h1,h2,h3,h4,h5,h6{margin-bottom:12px}b,h1,h2,h3,h4,h5,h6,strong,th{font-weight:600}blockquote{border-left:4px solid;margin:1em 0;padding:0 1em}blockquote>footer{margin-top:10px}a[href^=mailto]::before{content:'📧 '}a[href^=tel]::before{content:'📞 '}a[href^=sms]::before{content:' '}button,input[type=button],input[type=checkbox],input[type=submit]{cursor:pointer}button,input,select,textarea{color:#fff;background-color:#161f27;font-family:inherit;font-size:inherit;margin-right:6px;margin-bottom:6px;padding:10px;border:none;border-radius:6px;outline:0}button,input:not([type=checkbox]):not([type=radio]),select,textarea{-webkit-appearance:none}textarea{margin-right:0;width:100%;box-sizing:border-box;resize:vertical}button,input[type=button],input[type=submit]{padding-right:30px;padding-left:30px}button:hover,input[type=button]:hover,input[type=submit]:hover{background:#324759}button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px #0096bfab}button:active,input[type=button]:active,input[type=checkbox]:active,input[type=radio]:active,input[type=submit]:active{transform:translateY(2px)}button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed;opacity:.5}::-webkit-input-placeholder{color:#a9a9a9}:-ms-input-placeholder{color:#a9a9a9}::-ms-input-placeholder{color:#a9a9a9}::placeholder{color:#a9a9a9}a{text-decoration:none}a:hover{text-decoration:underline}pre>code{padding:10px;overflow-x:auto}img{max-width:100%}hr{border:none;border-top:1px solid #dbdbdb}table{border-collapse:collapse;margin-bottom:10px;width:100%}td,th{padding:6px;text-align:left}th{border-bottom:1px solid #dbdbdb}tbody tr:nth-child(2n){background-color:#161f27}::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#161f27;border-radius:6px}::-webkit-scrollbar-thumb{background:#324759;border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#415c73}nav{margin:1rem auto}</style>
+</head>
+<body>
+<article>
+<h1 id="cutscene-engine-manual">CUTSCENE ENGINE MANUAL</h1>
+<h2 id="welcome-to-use-cutscene-engine">Welcome to use Cutscene engine!</h2>
+<h2 id="contents">CONTENTS</h2>
+<ul>
+<li>Get started</li>
+<li>Simple step-by-step guide</li>
+<li>&quot;Internal&quot; scripts</li>
+<li>Dialogue</li><ul>
+<li>Changing default settings of dialogue</li>
+<li>Smart line break configuration</li>
+<li>Using Draw GUI for dialogue</li>
+<li>Using Cutscene engine with Dialogue engine</li></ul>
+<li>Custom scripts</li>
+<li>About unfinished scripts</li>
+<li>Updating the asset</li>
+<li>Tutorials</li>
+<li>Contact</li>
+<li>Other</li><ul>
+<li>Showcasing your games</li>
+<li>Beta test version</li></ul>
+</ul>
+<hr>
+<h2 id="get-started">GET STARTED</h2>
+<p>To get started take a look to the example rooms.</p>
+<p>Go to the creation code of the control_cutscene objects (double-click the object -&gt; creation code).
+There you can see examples of how to use it.
+You may want to try modifying that code, changing some scripts or arguments and then running the game.</p>
+<p>Then you may want to know how to use the scripts. There are more than 30! So how to use them?
+In each script there is an explanation about what it does. There you can also see what arguments it needs.</p>
+<hr>
+<h2 id="simple-step-by-step-guide">SIMPLE STEP-BY-STEP GUIDE</h2>
+<ol>
+<li>Add a control_cutscene object to the room</li>
+<li>Make sure there is a layer called &quot;hud&quot; in the room</li>
+<li>Double-click the control_cutscene object in the room</li>
+<li>Open the creation code</li>
+<li>Set these variables:</li>
+</ol>
+<ul>
+<li>cutscene_id (different for all cutscenes in the same room)</li>
+<li>cutscene_player (if cutscene_mode is collision, the collision is checked for this object) </li>
+<li>cutscene_mode (&quot;collision&quot; or &quot;immediate&quot;)</li>
+<li>persist (true or false)</li>
+</ul>
+<ol start="6">
+<li>Set the 2d array &quot;scene_info&quot; with all the scripts that constitute the cutscene</li>
+<li>Here is an example (more are in the example room):
+cutscene_id = 0;
+cutscene_player = example_player;
+cutscene_mode = &quot;collision&quot;;
+persist = false;</li>
+</ol>
+<p>scene_info = [
+    [cutscene_play_sound,sound_alarm,1],
+    [cutscene_wait,1],
+    [cutscene_move_object,example_player,170,300,2],
+    [cutscene_dialogue_style,noone,c_black,c_white,c_white,1,example_font,noone,true,example_continue1],
+    [cutscene_dialogue,&quot;What was that?&quot;]
+];
+In this example, the cutscene starts when example_player collides with control_cutscene. The cutscene plays a sound, waits for a second, moves an object and shows dialogue.</p>
+<hr>
+<h2 id="internal-scripts">&quot;INTERNAL&quot; SCRIPTS</h2>
+<h2 id="ignore-them-they-take-care-of-themselves">Ignore them. They take care of themselves.</h2>
+<h2 id="dialogue">DIALOGUE</h2>
+<p>Cutscene engine has lots of scripts to show text and dialogue. The script names start with &quot;cutscene_dialogue_&quot;.</p>
+<h3 id="changing-default-settings-of-dialogue">CHANGING DEFAULT SETTINGS OF DIALOGUE</h3>
+<p>If you don&#39;t want to call the script cutscene_dialogue_style, cutscene_dialogue_keys, cutscene_dialogue_sprite etc.
+everytime you add dialogue, you can change the default settings in the control_cutscene object.
+If you go to the create event of that object, you will find a &quot;SETTINGS AREA&quot; where you can change variables.</p>
+<h3 id="smart-line-break-configuration">SMART LINE BREAK CONFIGURATION</h3>
+<p>Recently I added a new optional argument to cutscene_dialogue_style: smart line breaks.
+This prevents text from changing line in the middle of a word. However, this is still an experimental
+feature and doesn&#39;t work correctly on all projects. If you want to use this feature in your project but
+it doesn&#39;t work correctly, you can try this:
+Go to textbox_draw script. Change the variable called linebreak_addition to something else
+(for example: 0, -5 or -10). It&#39;s completely possible that this doesn&#39;t fix it and you will not be able
+to use this feature. However, I tried to use this feature in 4 different projects and in 3 of them changing
+this variable helped (on 1 project it didn&#39;t work at all).</p>
+<h3 id="using-draw-gui">USING DRAW GUI</h3>
+<p>Using Draw GUI to draw the dialogue hasn&#39;t been tested a lot yet, so I recommend using the normal Draw event.
+But if you want to use it, follow these instructions:</p>
+<ol>
+<li>Go to the textbox object.</li>
+<li>Change the Draw event to Draw GUI.</li>
+<li>Change the draw_gui variable there to true.</li>
+</ol>
+<p>Things to note:
+Remember that using cutscene_dialogue_position is of course different when using Draw GUI.
+When using Draw GUI, your camera size and viewport size should be the same, otherwise clicking options with mouse will not work well.</p>
+<h3 id="using-cutscene-engine-with-dialogue-engine">USING CUTSCENE ENGINE WITH DIALOGUE ENGINE</h3>
+<p>I also have a Dialogue engine (<a href="https://marketplace.yoyogames.com/assets/6657/dialogue-engine-text-boxes">https://marketplace.yoyogames.com/assets/6657/dialogue-engine-text-boxes</a>).
+If you are using both engines together, you will notice that some objects and scripts have the same name.
+You can delete the duplicates.</p>
+<hr>
+<h2 id="custom-scripts">CUSTOM SCRIPTS</h2>
+<p>You can make your own scripts too. When the thing the script is supposed to do is done, call cutscene_next().
+See the other scripts for examples. You could use one of them as a template.</p>
+<hr>
+<h2 id="about-unfinished-scripts">ABOUT UNFINISHED SCRIPTS</h2>
+<p>Some scripts might not work correctly yet, for example cutscene_skip.
+These will be fixed / updated in the future.</p>
+<hr>
+<h2 id="updating-the-asset">UPDATING THE ASSET</h2>
+<p>NOTE! If you update the asset from your asset library, if the control_cutscene object gets updated,
+Gamemaker will probably remove it from all rooms, and your cutscenes might get removed too.
+So if you for some reason want to update it, I recommend doing a backup first.</p>
+<hr>
+<h2 id="tutorials">TUTORIALS</h2>
+<h2 id="there-are-some-simple-tutorials-only-one-currently-for-this-engine-on-my-youtube-channel-httpswwwyoutubecompikku-a">There are some simple tutorials (only one currently...) for this engine on my Youtube channel: <a href="https://www.youtube.com/@pikku-a">https://www.youtube.com/@pikku-a</a></h2>
+<h2 id="contact">CONTACT</h2>
+<p>If you need more help or want to suggest a feature.
+Discussion board on itch.io: <a href="https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2/community">https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2/community</a></p>
+<h2 id="you-can-find-my-email-on-my-website">You can find my email on my website.</h2>
+<h2 id="other">OTHER</h2>
+<p>This engine will improve over time and more features will be added.</p>
+<h3 id="showcasing-your-games">SHOWCASING YOUR GAMES</h3>
+<p>Have you made a game using this Cutscene engine?
+If so, you can email me a link to the game and I might showcase it on my website or in the marketplace.</p>
+<h3 id="beta-test-version">BETA TEST VERSION</h3>
+<p>Since version 1.9.0 there is a beta test version available on itch.io. (<a href="https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2">https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2</a>)
+You can use it if you want to try new features earlier or if you want to help in testing.</p>
+</article>
+<footer><a href="https://pikkua.com">VISIT MY HOMEPAGE</a></footer>
+</body>
 </html>
