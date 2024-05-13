@@ -69,22 +69,22 @@ In each script there is an explanation about what it does. There you can also se
 <ol start="6">
 <li>Set the 2d array &quot;scene_info&quot; with all the scripts that constitute the cutscene</li>
 <li>Here is an example (more are in the example room):
-cutscene_id = 0;
+<pre><code>cutscene_id = 0;
 cutscene_player = example_player;
 cutscene_mode = &quot;collision&quot;;
-persist = false;</li>
-</ol>
-<p>scene_info = [
+persist = false;
+scene_info = [
     [cutscene_play_sound,sound_alarm,1],
     [cutscene_wait,1],
     [cutscene_move_object,example_player,170,300,2],
     [cutscene_dialogue_style,noone,c_black,c_white,c_white,1,example_font,noone,true,example_continue1],
     [cutscene_dialogue,&quot;What was that?&quot;]
-];
-In this example, the cutscene starts when example_player collides with control_cutscene. The cutscene plays a sound, waits for a second, moves an object and shows dialogue.</p>
+];</code></pre>
+<p>In this example, the cutscene starts when example_player collides with control_cutscene. The cutscene plays a sound, waits for a second, moves an object and shows dialogue.</p>
+</li></ol>
 <hr>
 <h2 id="internal-scripts">&quot;INTERNAL&quot; SCRIPTS</h2>
-<h2 id="ignore-them-they-take-care-of-themselves">Ignore them. They take care of themselves.</h2>
+<p id="ignore-them-they-take-care-of-themselves">Ignore them. They take care of themselves.</p>
 <h2 id="dialogue">DIALOGUE</h2>
 <p>Cutscene engine has lots of scripts to show text and dialogue. The script names start with &quot;cutscene_dialogue_&quot;.</p>
 <h3 id="changing-default-settings-of-dialogue">CHANGING DEFAULT SETTINGS OF DIALOGUE</h3>
@@ -130,7 +130,7 @@ Gamemaker will probably remove it from all rooms, and your cutscenes might get r
 So if you for some reason want to update it, I recommend doing a backup first.</p>
 <hr>
 <h2 id="tutorials">TUTORIALS</h2>
-<h2 id="there-are-some-simple-tutorials-only-one-currently-for-this-engine-on-my-youtube-channel-httpswwwyoutubecompikku-a">There are some simple tutorials (only one currently...) for this engine on my Youtube channel: <a href="https://www.youtube.com/@pikku-a">https://www.youtube.com/@pikku-a</a></h2>
+<p id="there-are-some-simple-tutorials-only-one-currently-for-this-engine-on-my-youtube-channel-httpswwwyoutubecompikku-a">There are some simple tutorials (only one currently...) for this engine on my Youtube channel: <a href="https://www.youtube.com/@pikku-a">https://www.youtube.com/@pikku-a</a></p>
 <h2 id="contact">CONTACT</h2>
 <p>If you need more help or want to suggest a feature.
 Discussion board on itch.io: <a href="https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2/community">https://pikku-a.itch.io/cutscene-engine-for-gamemaker-studio-2/community</a></p>
