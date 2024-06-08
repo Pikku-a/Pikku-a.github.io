@@ -6,7 +6,7 @@
 
 ## To do
 - Start using avif format for comics and maybe for some other stuff (but not games and other commercial stuff)
-- Make a script that automates RSS feed. It would have to be run before updating the site.
+- Make a script that automates RSS feed. (It would have to be run before updating the site.)
 
 Organizing:
 - Rename image folder to media or something else to indicate that there is other stuff too?
