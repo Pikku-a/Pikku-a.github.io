@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fūko is a man's best friend</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta rel="stylesheet" type="text/css" href="">
+		<style>
+			button {margin-top:300px;font-size:22px;background-color:#e8ef5b;}button:hover{background-color:gray;cursor:pointer;}input{font-size:22px;margin:10px;}input:hover{cursor:pointer;}footer{margin:50px;margin-top:700px;}a{color:white;}p{margin:0 auto;width:70%;}
+		</style>
+	</head>
+
+	<body style="color:white;background-color:black;text-align:center;margin: 0 auto;font-size:22px;">
+		<h1>FORGET DOGS<br>FŪKO IS A MAN'S BEST FRIEND</h1>
+		<img src="fuko-images/fuko-appears.gif" alt="Fuko appears.">
+		<img src="fuko-images/fuko-starfish.gif" alt="Fuko gives a starfish.">
+		<img src="fuko-images/fuko-head-pat.gif" alt="Fuko escapes head pat.">
+		<img src="fuko-images/fuko-bye.gif" alt="Fuko bids farewell.">
+		<br><br><br><br><br><br><br><br>
+		<p>Let me tell you why.</p><br>
+		<img src="fuko-images/fuko-intensifies.gif" alt="Fuko intensifies.">
+		<br><br><br><br><br><br><br><br>
+		<p>World famous starfish connoisseur.</p><br>
+		<img src="fuko-images/fuko-starfish2.gif" alt="Fuko swings a starfish.">
+		<br><br><br><br><br><br><br>
+		<p>Best at imaginary basketball.</p><br>
+		<img src="fuko-images/fuko-basketball.gif" alt="Fuko plays imaginary basketball.">
+		<br><br><br><br><br><br><br>
+		<p>A kind and generous person.</p><br>
+		<img src="fuko-images/fuko-star-from-bag.gif" alt="Fuko produces a starfish from a bag.">
+		<p style="font-size:16px;">(Take the starfish. TAKE IT.)</p>
+		<br><br><br><br><br><br><br>
+		<p>A very mature and wise person. (All her neighbors say so!)</p><br>
+		<img src="fuko-images/fuko-defense.gif" alt="Fuko tries to defense against an attack.">
+		<br><br><br><br><br><br><br>
+		<button type="button" id="info-button" onclick="hide_toggle(1);">
+				<img src="fuko-images/fuko-dance.gif" alt="Fuko does weird dance."><br>
+				I agree, but what was this weird Fūko creature again?
+		</button><br><br>
+		<p id="info-text" style="display:none;">Fūko is a character from CLANNAD, a visual novel game from 2004. An animation/anime adaptation has also been made.</p>
+		<button type="button" id="info-button2" onclick="hide_toggle(2);"><img src="fuko-images/fuko-point.gif" alt="Fuko points something."><br>What is the Ū character?</button><br><br>
+		<p id="info-text2" style="display:none;">It's basically 2 U's (uu, Fuuko). But many languages don't use many vocals successively, so Japanese written in Latin alphabet is written like that. (Same goes with Hebrew I think.)</p>
+		<button type="button" id="info-button3" onclick="hide_toggle(3);"><img src="fuko-images/fuko-starfish-attack.gif" alt="Fuko tries to attack with a starfish?"><br>Why did you make this weird website?</button>
+		<p id="info-text3" style="display:none;">I had a free afternoon. So I thought:<br>"Should I go to the beach? Should I meet friends?"<br>"No."<br>"I'll make a Fūko website."</p>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<p>Fūko is happy because you visited this site.</p><br>
+		<img src="fuko-images/fuko-win.gif" alt="Fuko is happy.">
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<img src="fuko-images/fuko-thumb-up-besto.gif" alt="Fuko gives you a thumbs up.">
+		<p>Since you are such a Fūko fan to find this hidden site, take a reward. A free link to my first commercial game.</p>
+		<input type="button" id="reward-button" onclick="claim_reward();" value="Claim reward">
+		<p id="info-text4" style="display:none;font-size:18px;">If the download link doesn't work, <a href="mailto:pikkua.games+secret@gmail.com">let me know</a>.</p>
+		<footer><a href="../../">my main page dude</a></footer>
+		<audio src="fuko-images/Hurry-Starfish.ogg" type="audio/ogg" autoplay loop>
+	</body>
+	<script type="text/javascript">
+	function hide_toggle(num){
+		let theid = "info-text"
+		if (num == 2) {
+			theid = "info-text2";
+		}else if (num == 3) {
+			theid = "info-text3";
+		}
+		if (document.getElementById(theid).style.display == "none") {
+			document.getElementById(theid).style.display = "block";
+			if (num == 1) {
+				document.getElementById("info-button").innerHTML = '<img src="fuko-images/fuko-dance.gif" alt="Fuko does weird dance."><br>I see, okay.';
+			}else if (num == 2) {
+				document.getElementById("info-button2").innerHTML = '<img src="fuko-images/fuko-point.gif" alt="Fuko points something."><br>Okay.';
+			}else if (num == 3) {
+				document.getElementById("info-button3").innerHTML = '<img src="fuko-images/fuko-starfish-attack.gif" alt="Fuko tries to attack with a starfish?"><br>...';
+			}
+		}else{
+			document.getElementById(theid).style.display = "none";
+			if (num == 1) {
+				document.getElementById("info-button").innerHTML = '<img src="fuko-images/fuko-dance.gif" alt="Fuko does weird dance."><br>I agree, but what was this weird Fūko creature again?';
+			}else if (num == 2) {
+				document.getElementById("info-button2").innerHTML = '<img src="fuko-images/fuko-point.gif" alt="Fuko points something."><br>What is the Ū character?'
+			}else if (num == 3) {
+				document.getElementById("info-button3").innerHTML = '<img src="fuko-images/fuko-starfish-attack.gif" alt="Fuko tries to attack with a starfish?"><br>Why did you make this weird website?';
+			}
+		}
+	}
+	function claim_reward() {
+		const links = ["https://pikku-a.itch.io/unknown-castle-de/download/fuko-2CCJymg1aDfCuTzVWmKR28Dfa-8K9XrFcWeFGFf29b3TuWMKB2LHj", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-zjCJymg1aDfCuTzVWmKR28Dfa-PqZfw3NK6yTCMG6GqQkg4q5YPDSh", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-QFCJymg1aDfCuTzVWmKR28Dfa-yMQzjWyDcMB1QBCqqUC1dAdHruap", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-FtCJymg1aDfCuTzVWmKR28Dfa-H38JCBsmPgJPirzKVmCUN8jRoyWh", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-NyCJymg1aDfCuTzVWmKR28Dfa-4GmKFMGF5yqmjBQRPx4T79NxiYas", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-esgJymg1aDfCuTzVWmKR28Dfa-Q35ziVWmGHuLvdYazHccYTt8DZ7p", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-h3gJymg1aDfCuTzVWmKR28Dfa-AzDpNrRY2fEhKwg4S4Gcq2yBMXL", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-7UgJymg1aDfCuTzVWmKR28Dfa-Qf5RLWsenczXgnw4687WQFrQXuGs", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-tGgJymg1aDfCuTzVWmKR28Dfa-Ki5zEYaHmbXde6DtmmsqxsewXeTs", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-xQZyWVZ5vQQURmdxUTqMWwSTYP-cHBtEM447YmN5kkwPbWTyJFe3iVs", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-4VZyWVZ5vQQURmdxUTqMWwSTYP-QsMNNLoLebinBTYeUsDWWaVxqjsh", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-8ZZyWVZ5vQQURmdxUTqMWwSTYP-ZiremKxb3r2jf8cxcR8SV85mLdUh", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-UeZyWVZ5vQQURmdxUTqMWwSTYP-M3p4HVkEhNyE919Xmm19TqUcVX8pv", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-c5ZyWVZ5vQQURmdxUTqMWwSTYP-NnUDyvYNohkE45bND6tA1gASiGQ", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-poZyWVZ5vQQURmdxUTqMWwSTYP-ebw2SCA7HKymPceY1ojoJg2PXfz", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-S1ZyWVZ5vQQURmdxUTqMWwSTYP-prJPEi6JttEhwUgXCSBEzFmX7eg", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-iAZyWVZ5vQQURmdxUTqMWwSTYP-VbUMM6KRqKSqgaDJpzEAiPGp5pSp", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-Gp2yWVZ5vQQURmdxUTqMWwSTYP-BwRi9XE3ibzWx9ignm2U4gH8pSxp", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-ga2yWVZ5vQQURmdxUTqMWwSTYP-xBKsa71xwybvp6ioe7o7nftx8Ffh", "https://pikku-a.itch.io/unknown-castle-de/download/fuko-tttyWVZ5vQQURmdxUTqMWwSTYP-5Ja66JvuFuCANAxmzPbyL5XQi2Qs"];
+		const random = Math.floor(Math.random() * links.length);
+		open(links[random]); // Could the same link be used for everyone? Can many people claim the link?
+		//open("https://pikku-a.itch.io/unknown-castle-de/download/fuko-2CCJymg1aDfCuTzVWmKR28Dfa-8K9XrFcWeFGFf29b3TuWMKB2LHj");
+		document.getElementById("info-text4").style.display = 'block';
+	}
+	</script>
+</html>
