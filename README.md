@@ -5,7 +5,6 @@
 ### All rights reserved.
 
 ## To do
-- Online notebook synchronization
 - Start using avif format for comics and maybe for some other stuff (but not games and other commercial stuff)
 - Make a script that automates RSS feed. It would have to be run before updating the site.
 
