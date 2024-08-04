@@ -11,7 +11,7 @@
 	</head>
 
 	<body style="color:white;background-color:black;text-align:center;margin: 0 auto;font-size:22px;">
-		<p id="info-text4" style="display:none;">Your browser apparently blocked music. I recommend allowing it to hear the cool Fūko music.</p>
+		<p id="info-text4" style="display:none;">Your browser apparently blocked the music. I recommend allowing it and reloading the page to hear the cool, must hear Fūko music.</p>
 		<h1>FORGET DOGS<br>FŪKO IS A MAN'S BEST FRIEND</h1>
 		<img src="fuko-images/fuko-appears.avif" alt="Fuko appears. (IF NONE OF THE IMAGES WORK, YOUR BROWSER PROBABLY DOESN'T SUPPORT AVIF. USE A MODERN BROWSER OR IF YOU WANT ME TO USE GIFS, GIVE ME MONEY TO BUY A BIGGER SDD AND ALSO PAY FOR THE EXTRA SERVER COSTS.)">
 		<img src="fuko-images/fuko-starfish.avif" alt="Fuko gives a starfish.">
@@ -97,7 +97,7 @@
 	function music_check() {
 		var music = document.getElementById('bg-music');
 		if (music.currentTime <= 0) {
-				console.log("Browser blocked music.");
+				//console.log("Browser blocked music.");
 				hide_toggle(4);
 		}
 	}
